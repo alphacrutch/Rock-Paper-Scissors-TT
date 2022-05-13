@@ -95,7 +95,7 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: column;
             flex-flow: column;
-    position: relative;
+    position: absolute;
     height: 40%;
     width: 100%;
     left: 50%;
