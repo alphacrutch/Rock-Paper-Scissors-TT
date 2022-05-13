@@ -42,10 +42,6 @@
     height: 80%;
     width: 40%;
   }
-  Main #titleScoreContainer #titleContainer svg {
-    -o-object-fit: fill;
-       object-fit: fill;
-  }
   Main #titleScoreContainer #ScoreContainer {
     border: 2px white solid;
     border-radius: 12px;
@@ -86,14 +82,16 @@
     font-size: 3rem;
   }
   Main #ChoicesContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
     position: relative;
-    height: 45%;
+    height: 40%;
     width: 100%;
   }
-  Main #ChoicesContainer #choiceBackGround {
+  Main #ChoicesContainer #ChoiceBackGround {
     position: absolute;
     z-index: 0;
     left: 50%;
@@ -102,9 +100,6 @@
   }
   Main #ChoicesContainer #choicesHolder {
     position: absolute;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -112,12 +107,18 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
   }
   Main #ChoicesContainer .choice {
     display: -webkit-box;
@@ -135,7 +136,7 @@
             justify-content: center;
     border-radius: 50%;
     height: 100%;
-    width: 38%;
+    width: 40%;
     border: 1px solid grey;
   }
   Main #ChoicesContainer .choiceBackground {
@@ -237,8 +238,8 @@
     display: none;
     z-index: 8;
     background-color: rgba(0, 0, 0, 0.463);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     pointer-events: all;
   }
   Main #rulesModal {
@@ -300,7 +301,9 @@
             justify-content: center;
   }
   Main #PickedChoiceContainer {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: relative;
     height: 40%;
     width: 80%;
