@@ -95,12 +95,9 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: column;
             flex-flow: column;
-    position: absolute;
+    position: relative;
     height: 40%;
     width: 100%;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
   }
   Main #ChoicesContainer #ChoiceBackGround {
     position: absolute;
