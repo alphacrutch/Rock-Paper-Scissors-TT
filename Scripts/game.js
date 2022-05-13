@@ -128,7 +128,7 @@ const ShowResult = (string) => {
 }
 const ShowPickedView = () => {
     ChoiceView.style.display = "none";
-    WaitForAiView.style.display = "flex";
+    WaitForAiView.style.display = "grid";
 }
 const HideRules = () => {
     rulesModal.style.display = "none";

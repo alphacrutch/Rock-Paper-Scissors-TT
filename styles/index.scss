@@ -1,4 +1,4 @@
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 376px) {
     * {
         margin: 0;
         padding: 0;
@@ -321,6 +321,15 @@
                     background-color: aliceblue;
                     border-radius: 12px;
                 }
+            }
+            #rules:hover {
+                cursor: pointer;
+            }
+            .choice:hover {
+                cursor: pointer;
+            }
+            #PlayAgainButton:hover {
+                cursor: pointer;
             }
         }
     }

@@ -1,4 +1,4 @@
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 376px) {
   * {
     margin: 0;
     padding: 0;
@@ -525,6 +525,15 @@
     width: 100%;
     background-color: aliceblue;
     border-radius: 12px;
+  }
+  Main #PickedChoiceContainer #rules:hover {
+    cursor: pointer;
+  }
+  Main #PickedChoiceContainer .choice:hover {
+    cursor: pointer;
+  }
+  Main #PickedChoiceContainer #PlayAgainButton:hover {
+    cursor: pointer;
   }
   .attribution {
     font-size: 11px;

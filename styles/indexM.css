@@ -89,12 +89,14 @@ Main #titleScoreContainer #ScoreContainer #ScoreCounter {
   text-align: center;
   height: 60%;
   width: 98%;
-  color: #3b4363;
+  color: #606e85;
   font-size: 3rem;
 }
 
 Main #ChoicesContainer {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
@@ -330,19 +332,19 @@ Main #rulesModal #rulesImage {
 }
 
 Main #PickedChoiceContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+      grid-template-areas: "myChoice AiChoice" "winLoose winLoose";
   position: relative;
-  height: 50%;
-  width: 99%;
+  height: 70%;
+  width: 90%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -353,7 +355,9 @@ Main #PickedChoiceContainer .blankBackground {
 }
 
 Main #PickedChoiceContainer #MyChoice {
-  border: 1px white solid;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: myChoice;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -361,27 +365,31 @@ Main #PickedChoiceContainer #MyChoice {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50%;
-  width: 45%;
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+  height: 100%;
+  width: 100%;
 }
 
 Main #PickedChoiceContainer #MyChoice .choiceTitle {
   font-family: "Barlow Semi Condensed", sans-serif;
   position: relative;
-  top: 100%;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  top: 70%;
+  width: 100%;
+  height: 10%;
   font-weight: 600;
   color: white;
 }
 
 Main #PickedChoiceContainer #MyChoice .choice {
+  position: relative;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -396,8 +404,8 @@ Main #PickedChoiceContainer #MyChoice .choice {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 50%;
-  height: 60%;
-  width: 90%;
+  height: 50%;
+  width: 70%;
   border: 1px solid grey;
 }
 
@@ -443,7 +451,9 @@ Main #PickedChoiceContainer #MyChoice .choiceBackground {
 }
 
 Main #PickedChoiceContainer #AIChoice {
-  border: 1px white solid;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: AiChoice;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -457,15 +467,16 @@ Main #PickedChoiceContainer #AIChoice {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50%;
-  width: 45%;
+  height: 100%;
+  width: 100%;
 }
 
 Main #PickedChoiceContainer #AIChoice .choiceTitle {
-  border: 1px white solid;
   font-family: "Barlow Semi Condensed", sans-serif;
   position: relative;
-  top: 100%;
+  top: 70%;
+  width: 100%;
+  height: 10%;
   font-weight: 600;
   color: white;
 }
@@ -487,8 +498,8 @@ Main #PickedChoiceContainer #AIChoice .choice {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 50%;
-  height: 60%;
-  width: 75%;
+  height: 50%;
+  width: 70%;
 }
 
 Main #PickedChoiceContainer #AIChoice #AiBlank {
@@ -540,23 +551,32 @@ Main #PickedChoiceContainer #AIChoice .choiceBackground {
 }
 
 Main #PickedChoiceContainer #winLoseView {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: winLoose;
   display: none;
   position: relative;
-  height: 100%;
-  width: 20%;
+  top: 20%;
+  height: 60%;
+  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 Main #PickedChoiceContainer #winLoseView #winLoseText {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   font-size: 3rem;
   color: aliceblue;
 }
@@ -575,10 +595,26 @@ Main #PickedChoiceContainer #winLoseView #PlayAgainButton {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: red;
-  height: 10%;
-  width: 100%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  color: #606e85;
+  height: 30%;
+  width: 65%;
   background-color: aliceblue;
-  border-radius: 12px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+Main #rules:hover {
+  cursor: pointer;
+}
+
+Main .choice:hover {
+  cursor: pointer;
+}
+
+Main #PlayAgainButton:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=indexM.css.map */
