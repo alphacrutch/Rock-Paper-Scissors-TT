@@ -13,13 +13,14 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     height: 100vh;
-    width: 99vw;
+    width: 100vw;
     background-image: radial-gradient(#1f3756, #141539);
     background-repeat: no-repeat;
   }
@@ -32,6 +33,7 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
+    top: 5%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -100,11 +102,18 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    position: absolute;
     height: 50%;
     width: 40%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
   }
-  Main #ChoicesContainer #choiceBackGround {
+  Main #ChoicesContainer #ChoiceBackGround {
     position: absolute;
     z-index: 0;
     left: 50%;
@@ -218,6 +227,7 @@
             justify-content: center;
   }
   Main #rulesHolder {
+    bottom: 5%;
     width: 90%;
     height: 5%;
     display: -webkit-box;
@@ -233,6 +243,7 @@
     -webkit-box-pack: right;
         -ms-flex-pack: right;
             justify-content: right;
+    position: relative;
   }
   Main #rulesHolder #rules {
     height: 100%;
@@ -310,24 +321,20 @@
   }
   Main #PickedChoiceContainer {
     display: none;
+    -ms-grid-columns: 40% 20% 40%;
+        grid-template-columns: 40% 20% 40%;
+        grid-template-areas: "myChoice winLoose AiChoice";
     position: relative;
-    height: 40%;
-    width: 80%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    height: 50%;
+    width: 90%;
   }
   Main #PickedChoiceContainer .blankBackground {
     background-color: aqua;
   }
   Main #PickedChoiceContainer #MyChoice {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: myChoice;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -342,7 +349,7 @@
         -ms-flex-align: center;
             align-items: center;
     height: 100%;
-    width: 35%;
+    width: 100%;
   }
   Main #PickedChoiceContainer #MyChoice .choiceTitle {
     font-size: 1.6rem;
@@ -405,6 +412,9 @@
     width: 80%;
   }
   Main #PickedChoiceContainer #AIChoice {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: AiChoice;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -419,7 +429,7 @@
         -ms-flex-align: center;
             align-items: center;
     height: 100%;
-    width: 35%;
+    width: 100%;
   }
   Main #PickedChoiceContainer #AIChoice .choiceTitle {
     font-size: 1.6rem;
@@ -487,10 +497,13 @@
     width: 80%;
   }
   Main #PickedChoiceContainer #winLoseView {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: winLoose;
     display: none;
     position: relative;
     height: 100%;
-    width: 20%;
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
@@ -520,7 +533,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    color: red;
+    color: #606e85;
     height: 10%;
     width: 100%;
     background-color: aliceblue;
@@ -536,6 +549,8 @@
     cursor: pointer;
   }
   .attribution {
+    position: absolute;
+    bottom: 0%;
     font-size: 11px;
     text-align: center;
   }
