@@ -102,6 +102,9 @@
   Main #ChoicesContainer #ChoiceBackGround {
     position: absolute;
     z-index: 0;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   Main #ChoicesContainer #choicesHolder {
     position: absolute;
