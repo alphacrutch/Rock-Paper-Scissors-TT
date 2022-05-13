@@ -1,9 +1,4 @@
-@media screen and (min-width: 800px) {
-  * {
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
-  }
+@media screen and (max-width: 769px) {
   Main {
     position: relative;
     display: -webkit-box;
@@ -19,7 +14,7 @@
         -ms-flex-align: center;
             align-items: center;
     height: 100vh;
-    width: 99vw;
+    width: 100vw;
     background-image: radial-gradient(#1f3756, #141539);
     background-repeat: no-repeat;
   }
@@ -38,28 +33,18 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 15%;
-    width: 50%;
+    height: 12%;
+    width: 80%;
     border: 3px #606e85 solid;
-    border-radius: 12px;
+    border-radius: 10px;
   }
   Main #titleScoreContainer #titleContainer {
-    margin-left: 5%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     height: 80%;
-    width: 30%;
+    width: 40%;
+  }
+  Main #titleScoreContainer #titleContainer svg {
+    -o-object-fit: fill;
+       object-fit: fill;
   }
   Main #titleScoreContainer #ScoreContainer {
     border: 2px white solid;
@@ -83,6 +68,8 @@
     width: 30%;
   }
   Main #titleScoreContainer #ScoreContainer #Scoretilte {
+    font-weight: 600;
+    font-family: "Barlow Semi Condensed", sans-serif;
     text-align: center;
     height: 20%;
     width: 100%;
@@ -90,6 +77,8 @@
     font-size: 24px;
   }
   Main #titleScoreContainer #ScoreContainer #ScoreCounter {
+    font-weight: 600;
+    font-family: "Barlow Semi Condensed", sans-serif;
     text-align: center;
     height: 60%;
     width: 100%;
@@ -101,8 +90,8 @@
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    height: 50%;
-    width: 40%;
+    height: 45%;
+    width: 100%;
   }
   Main #ChoicesContainer #choiceBackGround {
     position: absolute;
@@ -146,7 +135,7 @@
             justify-content: center;
     border-radius: 50%;
     height: 100%;
-    width: 35%;
+    width: 38%;
     border: 1px solid grey;
   }
   Main #ChoicesContainer .choiceBackground {
@@ -227,16 +216,16 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    -webkit-box-pack: right;
-        -ms-flex-pack: right;
-            justify-content: right;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   Main #rulesHolder #rules {
     height: 100%;
-    width: 10%;
+    width: 25%;
     border: 3px #606e85 solid;
     color: #3b4363;
     text-align: center;
@@ -265,28 +254,34 @@
         -ms-flex-align: center;
             align-items: center;
     position: absolute;
-    height: 400px;
-    width: 400px;
+    height: 100vh;
+    width: 100vw;
     z-index: 9;
     background-color: aliceblue;
     border-radius: 12px;
   }
   Main #rulesModal #closeRulesBtnHolder {
+    margin-top: 10%;
+    position: absolute;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    -webkit-box-pack: right;
-        -ms-flex-pack: right;
-            justify-content: right;
-    height: 10%;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 80%;
     width: 90%;
+  }
+  Main #rulesModal #closeRulesBtnHolder #RulesTitle {
+    color: #3b4363;
+    font-size: 2rem;
   }
   Main #rulesModal #rulesImage {
     height: 90%;
@@ -522,12 +517,5 @@
     background-color: aliceblue;
     border-radius: 12px;
   }
-  .attribution {
-    font-size: 11px;
-    text-align: center;
-  }
-  .attribution a {
-    color: #3e52a3;
-  }
 }
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=indexM.css.map */

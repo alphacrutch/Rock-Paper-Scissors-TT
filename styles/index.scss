@@ -171,10 +171,14 @@
             #closeRulesBtnHolder {
                 display: flex;
                 flex-flow: row nowrap;
-                align-items: flex-end;
-                justify-content: right;
+                align-items: center;
+                justify-content: space-between;
                 height: 10%;
                 width: 90%;
+                #RulesTitle {
+                    color: hsl(229, 25%, 31%);
+                    font-size: 2rem;
+                }
             }
             #rulesImage {
                 height: 90%;
