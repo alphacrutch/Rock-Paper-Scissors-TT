@@ -2,7 +2,7 @@ const paperDiv = document.getElementById("paperChoice");
 const rockDiv = document.getElementById("rockChoice");
 const scissorDiv = document.getElementById("scissorsChoice");
 const scoreDiv = document.getElementById("ScoreCounter");
-const score = 0;
+
 const overlay = document.getElementById("overlay");
 const rulesModal = document.getElementById("rulesModal");
 const closeRulesBtn = document.getElementById("closeRulesBtn");
@@ -10,7 +10,7 @@ const RulesBtn = document.getElementById("rules");
 const ChoiceView = document.getElementById("ChoicesContainer");
 const WaitForAiView = document.getElementById("PickedView")
 const WinLooseView = document.getElementById("winLooseView");
-
+var score = 0;
 
 const ShowRules = () => {
     rulesModal.style.display = "flex";

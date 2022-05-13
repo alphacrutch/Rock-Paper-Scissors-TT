@@ -267,6 +267,7 @@ Main #overlay {
   background-color: rgba(0, 0, 0, 0.463);
   height: 100vh;
   width: 100vw;
+  pointer-events: all;
 }
 
 Main #rulesModal {
