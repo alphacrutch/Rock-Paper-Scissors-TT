@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 Main {
   position: relative;
   display: -webkit-box;
@@ -7,8 +12,9 @@ Main {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -36,17 +42,18 @@ Main #titleScoreContainer {
   height: 12%;
   width: 80%;
   border: 3px #606e85 solid;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 Main #titleScoreContainer #titleContainer {
+  position: relative;
   height: 80%;
   width: 40%;
 }
 
 Main #titleScoreContainer #ScoreContainer {
   border: 2px white solid;
-  border-radius: 12px;
+  border-radius: 5px;
   background-color: white;
   margin-right: 5%;
   display: -webkit-box;
@@ -71,7 +78,7 @@ Main #titleScoreContainer #ScoreContainer #Scoretilte {
   font-family: "Barlow Semi Condensed", sans-serif;
   text-align: center;
   height: 20%;
-  width: 100%;
+  width: 98%;
   color: #2a46c0;
   font-size: 24px;
 }
@@ -81,7 +88,7 @@ Main #titleScoreContainer #ScoreContainer #ScoreCounter {
   font-family: "Barlow Semi Condensed", sans-serif;
   text-align: center;
   height: 60%;
-  width: 100%;
+  width: 98%;
   color: #3b4363;
   font-size: 3rem;
 }
@@ -328,17 +335,17 @@ Main #PickedChoiceContainer {
   display: flex;
   position: relative;
   height: 50%;
-  width: 80%;
+  width: 99%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 Main #PickedChoiceContainer .blankBackground {
@@ -346,6 +353,7 @@ Main #PickedChoiceContainer .blankBackground {
 }
 
 Main #PickedChoiceContainer #MyChoice {
+  border: 1px white solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -359,12 +367,17 @@ Main #PickedChoiceContainer #MyChoice {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
-  width: 35%;
+  height: 50%;
+  width: 45%;
 }
 
 Main #PickedChoiceContainer #MyChoice .choiceTitle {
-  font-size: 1.6rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  position: relative;
+  top: 100%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-weight: 600;
   color: white;
 }
 
@@ -383,7 +396,7 @@ Main #PickedChoiceContainer #MyChoice .choice {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 50%;
-  height: 80%;
+  height: 60%;
   width: 90%;
   border: 1px solid grey;
 }
@@ -430,6 +443,7 @@ Main #PickedChoiceContainer #MyChoice .choiceBackground {
 }
 
 Main #PickedChoiceContainer #AIChoice {
+  border: 1px white solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -437,22 +451,28 @@ Main #PickedChoiceContainer #AIChoice {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
-  width: 35%;
+  height: 50%;
+  width: 45%;
 }
 
 Main #PickedChoiceContainer #AIChoice .choiceTitle {
-  font-size: 1.6rem;
+  border: 1px white solid;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  position: relative;
+  top: 100%;
+  font-weight: 600;
   color: white;
 }
 
 Main #PickedChoiceContainer #AIChoice .choice {
+  position: relative;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -467,8 +487,8 @@ Main #PickedChoiceContainer #AIChoice .choice {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 50%;
-  height: 80%;
-  width: 90%;
+  height: 60%;
+  width: 75%;
 }
 
 Main #PickedChoiceContainer #AIChoice #AiBlank {
