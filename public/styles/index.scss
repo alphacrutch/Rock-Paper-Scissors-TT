@@ -1,331 +1,330 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
-}
-
-Main {
-    position: relative;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    width: 99vw;
-    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    background-repeat: no-repeat;
-    #titleScoreContainer {
+@media screen and (min-width: 800px) {
+    * {
+        margin: 0;
+        padding: 0;
+        font-weight: 700;
+    }
+    Main {
         position: relative;
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        height: 15%;
-        width: 50%;
-        border: 3px hsl(217, 16%, 45%) solid;
-        border-radius: 12px;
-        #titleContainer {
-            margin-left: 5%;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            height: 80%;
-            width: 30%;
-        }
-        #ScoreContainer {
-            border: 2px white solid;
-            border-radius: 12px;
-            background-color: white;
-            margin-right: 5%;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            height: 80%;
-            width: 30%;
-            #Scoretilte {
-                text-align: center;
-                height: 20%;
-                width: 100%;
-                color: hsl(229, 64%, 46%);
-                font-size: 24px;
-            }
-            #ScoreCounter {
-                text-align: center;
-                height: 60%;
-                width: 100%;
-                color: hsl(229, 25%, 31%);
-                font-size: 3rem;
-            }
-        }
-    }
-    #ChoicesContainer {
-        display: flex;
-        position: relative;
-        height: 50%;
-        width: 40%;
-        #choiceBackGround {
-            position: absolute;
-            z-index: 0;
-            left: 50%;
-            top: 50%;
-            translate: -50% -50%;
-        }
-        #choicesHolder {
-            position: absolute;
-            z-index: 1;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-        .choice {
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            height: 100%;
-            width: 35%;
-            border: 1px solid grey;
-        }
-        .choiceBackground {
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: aliceblue;
-            height: 80%;
-            width: 80%;
-        }
-        #paper {
-            box-shadow: -5px, 5px grey;
-            background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-        }
-        #scissors {
-            box-shadow: -5px, 5px grey;
-            background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-        }
-        #rock {
-            box-shadow: -5px, 5px grey;
-            background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-        }
-        #TopChoice {
-            height: 40%;
-            width: 100%;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-        #bottomChoice {
-            height: 40%;
-            width: 100%;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-    #rulesHolder {
-        width: 90%;
-        height: 5%;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: flex-end;
-        justify-content: right;
-        #rules {
-            height: 100%;
-            width: 10%;
-            border: 3px hsl(217, 16%, 45%) solid;
-            color: hsl(229, 25%, 31%);
-            text-align: center;
-            font-size: 2rem;
-            border-radius: 10px;
-        }
-    }
-    #overlay {
-        position: fixed;
-        display: none;
-        z-index: 8;
-        background-color: rgba(0, 0, 0, 0.463);
-        height: 100vh;
-        width: 100vw;
-        pointer-events: all;
-    }
-    #rulesModal {
-        display: none;
         flex-flow: column nowrap;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        position: absolute;
-        height: 400px;
-        width: 400px;
-        z-index: 9;
-        background-color: aliceblue;
-        border-radius: 12px;
-        #closeRulesBtnHolder {
+        height: 100vh;
+        width: 99vw;
+        background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+        background-repeat: no-repeat;
+        #titleScoreContainer {
+            position: relative;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 15%;
+            width: 50%;
+            border: 3px hsl(217, 16%, 45%) solid;
+            border-radius: 12px;
+            #titleContainer {
+                margin-left: 5%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                height: 80%;
+                width: 30%;
+            }
+            #ScoreContainer {
+                border: 2px white solid;
+                border-radius: 12px;
+                background-color: white;
+                margin-right: 5%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                height: 80%;
+                width: 30%;
+                #Scoretilte {
+                    text-align: center;
+                    height: 20%;
+                    width: 100%;
+                    color: hsl(229, 64%, 46%);
+                    font-size: 24px;
+                }
+                #ScoreCounter {
+                    text-align: center;
+                    height: 60%;
+                    width: 100%;
+                    color: hsl(229, 25%, 31%);
+                    font-size: 3rem;
+                }
+            }
+        }
+        #ChoicesContainer {
+            display: flex;
+            position: relative;
+            height: 50%;
+            width: 40%;
+            #choiceBackGround {
+                position: absolute;
+                z-index: 0;
+                left: 50%;
+                top: 50%;
+                translate: -50% -50%;
+            }
+            #choicesHolder {
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .choice {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                height: 100%;
+                width: 35%;
+                border: 1px solid grey;
+            }
+            .choiceBackground {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: aliceblue;
+                height: 80%;
+                width: 80%;
+            }
+            #paper {
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+            }
+            #scissors {
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+            }
+            #rock {
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+            }
+            #TopChoice {
+                height: 40%;
+                width: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            #bottomChoice {
+                height: 40%;
+                width: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        #rulesHolder {
+            width: 90%;
+            height: 5%;
             display: flex;
             flex-flow: row nowrap;
             align-items: flex-end;
             justify-content: right;
-            height: 10%;
-            width: 90%;
-        }
-        #rulesImage {
-            height: 90%;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-    #PickedChoiceContainer {
-        display: none;
-        position: relative;
-        height: 40%;
-        width: 80%;
-        flex-flow: row nowrap;
-        justify-content: space-evenly;
-        align-items: center;
-        .blankBackground {
-            background-color: aqua;
-        }
-        #MyChoice {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-            width: 35%;
-            .choiceTitle {
-                font-size: 1.6rem;
-                color: white;
-            }
-            .choice {
-                display: flex;
-                flex-flow: column nowrap;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                height: 80%;
-                width: 90%;
-                border: 1px solid grey;
-            }
-            #myPaper {
-                display: none;
-                box-shadow: -5px, 5px grey;
-                background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-            }
-            #myScissors {
-                display: none;
-                box-shadow: -5px, 5px grey;
-                background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-            }
-            #myRock {
-                display: none;
-                box-shadow: -5px, 5px grey;
-                background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-            }
-            .choiceBackground {
-                display: flex;
-                flex-flow: column nowrap;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                background-color: aliceblue;
-                height: 80%;
-                width: 80%;
+            #rules {
+                height: 100%;
+                width: 10%;
+                border: 3px hsl(217, 16%, 45%) solid;
+                color: hsl(229, 25%, 31%);
+                text-align: center;
+                font-size: 2rem;
+                border-radius: 10px;
             }
         }
-        #AIChoice {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-            width: 35%;
-            .choiceTitle {
-                font-size: 1.6rem;
-                color: white;
-            }
-            .choice {
-                display: flex;
-                flex-flow: column nowrap;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                height: 80%;
-                width: 90%;
-            }
-            #AiBlank {
-                background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-            }
-            #AiPaper {
-                display: none;
-                border: 1px white solid;
-                box-shadow: -5px, 5px grey;
-                background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-            }
-            #AiScissors {
-                display: none;
-                border: 1px white solid;
-                box-shadow: -5px, 5px grey;
-                background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-            }
-            #AiRock {
-                display: none;
-                border: 1px white solid;
-                box-shadow: -5px, 5px grey;
-                background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-            }
-            .choiceBackground {
-                display: flex;
-                flex-flow: column nowrap;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                background-color: aliceblue;
-                height: 80%;
-                width: 80%;
-            }
-        }
-        #winLoseView {
+        #overlay {
+            position: fixed;
             display: none;
-            position: relative;
-            height: 100%;
-            width: 20%;
+            z-index: 8;
+            background-color: rgba(0, 0, 0, 0.463);
+            height: 100vh;
+            width: 100vw;
+            pointer-events: all;
+        }
+        #rulesModal {
+            display: none;
             flex-flow: column nowrap;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            #winLoseText {
-                font-size: 3rem;
-                color: aliceblue;
-            }
-            #PlayAgainButton {
+            position: absolute;
+            height: 400px;
+            width: 400px;
+            z-index: 9;
+            background-color: aliceblue;
+            border-radius: 12px;
+            #closeRulesBtnHolder {
                 display: flex;
                 flex-flow: row nowrap;
+                align-items: flex-end;
+                justify-content: right;
+                height: 10%;
+                width: 90%;
+            }
+            #rulesImage {
+                height: 90%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        #PickedChoiceContainer {
+            display: none;
+            position: relative;
+            height: 40%;
+            width: 80%;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            .blankBackground {
+                background-color: aqua;
+            }
+            #MyChoice {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                width: 35%;
+                .choiceTitle {
+                    font-size: 1.6rem;
+                    color: white;
+                }
+                .choice {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    height: 80%;
+                    width: 90%;
+                    border: 1px solid grey;
+                }
+                #myPaper {
+                    display: none;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+                }
+                #myScissors {
+                    display: none;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+                }
+                #myRock {
+                    display: none;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+                }
+                .choiceBackground {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: aliceblue;
+                    height: 80%;
+                    width: 80%;
+                }
+            }
+            #AIChoice {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                width: 35%;
+                .choiceTitle {
+                    font-size: 1.6rem;
+                    color: white;
+                }
+                .choice {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    height: 80%;
+                    width: 90%;
+                }
+                #AiBlank {
+                    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+                }
+                #AiPaper {
+                    display: none;
+                    border: 1px white solid;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+                }
+                #AiScissors {
+                    display: none;
+                    border: 1px white solid;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+                }
+                #AiRock {
+                    display: none;
+                    border: 1px white solid;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+                }
+                .choiceBackground {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: aliceblue;
+                    height: 80%;
+                    width: 80%;
+                }
+            }
+            #winLoseView {
+                display: none;
+                position: relative;
+                height: 100%;
+                width: 20%;
+                flex-flow: column nowrap;
                 justify-content: center;
                 align-items: center;
-                color: red;
-                height: 10%;
-                width: 100%;
-                background-color: aliceblue;
-                border-radius: 12px;
+                #winLoseText {
+                    font-size: 3rem;
+                    color: aliceblue;
+                }
+                #PlayAgainButton {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    color: red;
+                    height: 10%;
+                    width: 100%;
+                    background-color: aliceblue;
+                    border-radius: 12px;
+                }
             }
         }
     }
-}
-
-.attribution {
-    font-size: 11px;
-    text-align: center;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+    }
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
 }
