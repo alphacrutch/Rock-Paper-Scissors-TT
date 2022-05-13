@@ -1,0 +1,521 @@
+@media screen and (min-width: 800px) {
+  Main {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+    width: 99vw;
+    background-image: radial-gradient(#1f3756, #141539);
+    background-repeat: no-repeat;
+  }
+  Main #titleScoreContainer {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 15%;
+    width: 50%;
+    border: 3px #606e85 solid;
+    border-radius: 12px;
+  }
+  Main #titleScoreContainer #titleContainer {
+    margin-left: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 80%;
+    width: 30%;
+  }
+  Main #titleScoreContainer #ScoreContainer {
+    border: 2px white solid;
+    border-radius: 12px;
+    background-color: white;
+    margin-right: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 80%;
+    width: 30%;
+  }
+  Main #titleScoreContainer #ScoreContainer #Scoretilte {
+    text-align: center;
+    height: 20%;
+    width: 100%;
+    color: #2a46c0;
+    font-size: 24px;
+  }
+  Main #titleScoreContainer #ScoreContainer #ScoreCounter {
+    text-align: center;
+    height: 60%;
+    width: 100%;
+    color: #3b4363;
+    font-size: 3rem;
+  }
+  Main #ChoicesContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    height: 50%;
+    width: 40%;
+  }
+  Main #ChoicesContainer #choiceBackGround {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+  Main #ChoicesContainer #choicesHolder {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  Main #ChoicesContainer .choice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    height: 100%;
+    width: 35%;
+    border: 1px solid grey;
+  }
+  Main #ChoicesContainer .choiceBackground {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    background-color: aliceblue;
+    height: 80%;
+    width: 80%;
+  }
+  Main #ChoicesContainer #paper {
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#4865f4, #5671f5);
+  }
+  Main #ChoicesContainer #scissors {
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#ec9e0e, #eca922);
+  }
+  Main #ChoicesContainer #rock {
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#dc2e4e, #dd405d);
+  }
+  Main #ChoicesContainer #TopChoice {
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  Main #ChoicesContainer #bottomChoice {
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  Main #rulesHolder {
+    width: 90%;
+    height: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+  }
+  Main #rulesHolder #rules {
+    height: 100%;
+    width: 10%;
+    border: 3px #606e85 solid;
+    color: #3b4363;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 10px;
+  }
+  Main #overlay {
+    position: fixed;
+    display: none;
+    z-index: 8;
+    background-color: rgba(0, 0, 0, 0.463);
+    height: 100vh;
+    width: 100vw;
+    pointer-events: all;
+  }
+  Main #rulesModal {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    z-index: 9;
+    background-color: aliceblue;
+    border-radius: 12px;
+  }
+  Main #rulesModal #closeRulesBtnHolder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    height: 10%;
+    width: 90%;
+  }
+  Main #rulesModal #rulesImage {
+    height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  Main #PickedChoiceContainer {
+    display: none;
+    position: relative;
+    height: 40%;
+    width: 80%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  Main #PickedChoiceContainer .blankBackground {
+    background-color: aqua;
+  }
+  Main #PickedChoiceContainer #MyChoice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+    width: 35%;
+  }
+  Main #PickedChoiceContainer #MyChoice .choiceTitle {
+    font-size: 1.6rem;
+    color: white;
+  }
+  Main #PickedChoiceContainer #MyChoice .choice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    height: 80%;
+    width: 90%;
+    border: 1px solid grey;
+  }
+  Main #PickedChoiceContainer #MyChoice #myPaper {
+    display: none;
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#4865f4, #5671f5);
+  }
+  Main #PickedChoiceContainer #MyChoice #myScissors {
+    display: none;
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#ec9e0e, #eca922);
+  }
+  Main #PickedChoiceContainer #MyChoice #myRock {
+    display: none;
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#dc2e4e, #dd405d);
+  }
+  Main #PickedChoiceContainer #MyChoice .choiceBackground {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    background-color: aliceblue;
+    height: 80%;
+    width: 80%;
+  }
+  Main #PickedChoiceContainer #AIChoice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+    width: 35%;
+  }
+  Main #PickedChoiceContainer #AIChoice .choiceTitle {
+    font-size: 1.6rem;
+    color: white;
+  }
+  Main #PickedChoiceContainer #AIChoice .choice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    height: 80%;
+    width: 90%;
+  }
+  Main #PickedChoiceContainer #AIChoice #AiBlank {
+    background-image: radial-gradient(#1f3756, #141539);
+  }
+  Main #PickedChoiceContainer #AIChoice #AiPaper {
+    display: none;
+    border: 1px white solid;
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#4865f4, #5671f5);
+  }
+  Main #PickedChoiceContainer #AIChoice #AiScissors {
+    display: none;
+    border: 1px white solid;
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#ec9e0e, #eca922);
+  }
+  Main #PickedChoiceContainer #AIChoice #AiRock {
+    display: none;
+    border: 1px white solid;
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#dc2e4e, #dd405d);
+  }
+  Main #PickedChoiceContainer #AIChoice .choiceBackground {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    background-color: aliceblue;
+    height: 80%;
+    width: 80%;
+  }
+  Main #PickedChoiceContainer #winLoseView {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 20%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  Main #PickedChoiceContainer #winLoseView #winLoseText {
+    font-size: 3rem;
+    color: aliceblue;
+  }
+  Main #PickedChoiceContainer #winLoseView #PlayAgainButton {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: red;
+    height: 10%;
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 12px;
+  }
+}
+/*# sourceMappingURL=indexM.css.map */
