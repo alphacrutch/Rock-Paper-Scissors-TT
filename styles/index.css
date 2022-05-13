@@ -87,7 +87,6 @@ Main #titleScoreContainer #ScoreContainer {
 }
 
 Main #titleScoreContainer #ScoreContainer #Scoretilte {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   height: 20%;
   width: 100%;
@@ -96,7 +95,6 @@ Main #titleScoreContainer #ScoreContainer #Scoretilte {
 }
 
 Main #titleScoreContainer #ScoreContainer #ScoreCounter {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   height: 60%;
   width: 100%;
@@ -181,19 +179,19 @@ Main #ChoicesContainer .choiceBackground {
   width: 80%;
 }
 
-Main #ChoicesContainer #paperChoice {
+Main #ChoicesContainer #paper {
   -webkit-box-shadow: -5px, 5px grey;
           box-shadow: -5px, 5px grey;
   background-image: radial-gradient(#4865f4, #5671f5);
 }
 
-Main #ChoicesContainer #scissorsChoice {
+Main #ChoicesContainer #scissors {
   -webkit-box-shadow: -5px, 5px grey;
           box-shadow: -5px, 5px grey;
   background-image: radial-gradient(#ec9e0e, #eca922);
 }
 
-Main #ChoicesContainer #rockChoice {
+Main #ChoicesContainer #rock {
   -webkit-box-shadow: -5px, 5px grey;
           box-shadow: -5px, 5px grey;
   background-image: radial-gradient(#dc2e4e, #dd405d);
@@ -332,14 +330,14 @@ Main #PickedChoiceContainer {
   display: none;
   position: relative;
   height: 40%;
-  width: 50%;
+  width: 80%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -364,7 +362,7 @@ Main #PickedChoiceContainer #MyChoice {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  width: 50%;
+  width: 35%;
 }
 
 Main #PickedChoiceContainer #MyChoice .choiceTitle {
@@ -448,7 +446,7 @@ Main #PickedChoiceContainer #AIChoice {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  width: 50%;
+  width: 35%;
 }
 
 Main #PickedChoiceContainer #AIChoice .choiceTitle {
@@ -521,6 +519,49 @@ Main #PickedChoiceContainer #AIChoice .choiceBackground {
   background-color: aliceblue;
   height: 80%;
   width: 80%;
+}
+
+Main #PickedChoiceContainer #winLoseView {
+  display: none;
+  position: relative;
+  height: 100%;
+  width: 20%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+Main #PickedChoiceContainer #winLoseView #winLoseText {
+  font-size: 3rem;
+  color: aliceblue;
+}
+
+Main #PickedChoiceContainer #winLoseView #PlayAgainButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: red;
+  height: 10%;
+  width: 100%;
+  background-color: aliceblue;
+  border-radius: 12px;
 }
 
 .attribution {
