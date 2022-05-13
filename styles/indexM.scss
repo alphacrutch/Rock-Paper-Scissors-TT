@@ -71,9 +71,6 @@
             #ChoiceBackGround {
                 position: absolute;
                 z-index: 0;
-                left: 50%;
-                top: 50%;
-                translate: -50% -50%;
             }
             #choicesHolder {
                 position: absolute;
@@ -84,9 +81,6 @@
                 z-index: 1;
                 height: 100%;
                 width: 100%;
-                left: 50%;
-                top: 50%;
-                translate: -50% -50%;
             }
             .choice {
                 display: flex;
