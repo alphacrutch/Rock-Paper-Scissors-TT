@@ -100,6 +100,7 @@
     width: 100%;
   }
   Main #ChoicesContainer #ChoiceBackGround {
+    top: 5%;
     position: absolute;
     z-index: 0;
     -ms-flex-item-align: center;
