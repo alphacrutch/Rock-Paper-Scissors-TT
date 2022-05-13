@@ -105,6 +105,9 @@ Main #titleScoreContainer #ScoreContainer #ScoreCounter {
 }
 
 Main #ChoicesContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   height: 50%;
   width: 40%;
@@ -323,6 +326,201 @@ Main #rulesModal #rulesImage {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+Main #PickedChoiceContainer {
+  display: none;
+  position: relative;
+  height: 40%;
+  width: 50%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+Main #PickedChoiceContainer .blankBackground {
+  background-color: aqua;
+}
+
+Main #PickedChoiceContainer #MyChoice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+Main #PickedChoiceContainer #MyChoice .choiceTitle {
+  font-size: 1.6rem;
+  color: white;
+}
+
+Main #PickedChoiceContainer #MyChoice .choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  height: 80%;
+  width: 90%;
+  border: 1px solid grey;
+}
+
+Main #PickedChoiceContainer #MyChoice #myPaper {
+  display: none;
+  -webkit-box-shadow: -5px, 5px grey;
+          box-shadow: -5px, 5px grey;
+  background-image: radial-gradient(#4865f4, #5671f5);
+}
+
+Main #PickedChoiceContainer #MyChoice #myScissors {
+  display: none;
+  -webkit-box-shadow: -5px, 5px grey;
+          box-shadow: -5px, 5px grey;
+  background-image: radial-gradient(#ec9e0e, #eca922);
+}
+
+Main #PickedChoiceContainer #MyChoice #myRock {
+  display: none;
+  -webkit-box-shadow: -5px, 5px grey;
+          box-shadow: -5px, 5px grey;
+  background-image: radial-gradient(#dc2e4e, #dd405d);
+}
+
+Main #PickedChoiceContainer #MyChoice .choiceBackground {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  background-color: aliceblue;
+  height: 80%;
+  width: 80%;
+}
+
+Main #PickedChoiceContainer #AIChoice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+Main #PickedChoiceContainer #AIChoice .choiceTitle {
+  font-size: 1.6rem;
+  color: white;
+}
+
+Main #PickedChoiceContainer #AIChoice .choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  height: 80%;
+  width: 90%;
+}
+
+Main #PickedChoiceContainer #AIChoice #AiBlank {
+  background-image: radial-gradient(#1f3756, #141539);
+}
+
+Main #PickedChoiceContainer #AIChoice #AiPaper {
+  display: none;
+  border: 1px white solid;
+  -webkit-box-shadow: -5px, 5px grey;
+          box-shadow: -5px, 5px grey;
+  background-image: radial-gradient(#4865f4, #5671f5);
+}
+
+Main #PickedChoiceContainer #AIChoice #AiScissors {
+  display: none;
+  border: 1px white solid;
+  -webkit-box-shadow: -5px, 5px grey;
+          box-shadow: -5px, 5px grey;
+  background-image: radial-gradient(#ec9e0e, #eca922);
+}
+
+Main #PickedChoiceContainer #AIChoice #AiRock {
+  display: none;
+  border: 1px white solid;
+  -webkit-box-shadow: -5px, 5px grey;
+          box-shadow: -5px, 5px grey;
+  background-image: radial-gradient(#dc2e4e, #dd405d);
+}
+
+Main #PickedChoiceContainer #AIChoice .choiceBackground {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  background-color: aliceblue;
+  height: 80%;
+  width: 80%;
 }
 
 .attribution {

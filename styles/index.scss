@@ -63,6 +63,7 @@ Main {
         }
     }
     #ChoicesContainer {
+        display: flex;
         position: relative;
         height: 50%;
         width: 40%;
@@ -183,6 +184,117 @@ Main {
             flex-flow: row nowrap;
             align-items: center;
             justify-content: center;
+        }
+    }
+    #PickedChoiceContainer {
+        display: none;
+        position: relative;
+        height: 40%;
+        width: 50%;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        .blankBackground {
+            background-color: aqua;
+        }
+        #MyChoice {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 50%;
+            .choiceTitle {
+                font-size: 1.6rem;
+                color: white;
+            }
+            .choice {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                height: 80%;
+                width: 90%;
+                border: 1px solid grey;
+            }
+            #myPaper {
+                display: none;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+            }
+            #myScissors {
+                display: none;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+            }
+            #myRock {
+                display: none;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+            }
+            .choiceBackground {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: aliceblue;
+                height: 80%;
+                width: 80%;
+            }
+        }
+        #AIChoice {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 50%;
+            .choiceTitle {
+                font-size: 1.6rem;
+                color: white;
+            }
+            .choice {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                height: 80%;
+                width: 90%;
+            }
+            #AiBlank {
+                background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+            }
+            #AiPaper {
+                display: none;
+                border: 1px white solid;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+            }
+            #AiScissors {
+                display: none;
+                border: 1px white solid;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+            }
+            #AiRock {
+                display: none;
+                border: 1px white solid;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+            }
+            .choiceBackground {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: aliceblue;
+                height: 80%;
+                width: 80%;
+            }
         }
     }
 }
