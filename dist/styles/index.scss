@@ -1,0 +1,426 @@
+@media screen and (min-width: 770px) {
+    * {
+        margin: 0;
+        padding: 0;
+        font-weight: 700;
+    }
+    Main {
+        position: relative;
+        display: grid;
+        grid-template-rows: 5% 20% 60% 10% 5%;
+        grid-template-columns: 100%;
+        grid-template-areas: "menuPVP" "scoreView" "choiceView" "rulesView" "attribution";
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+        background-repeat: no-repeat;
+        .paperImage {
+            height: 50%;
+            width: 45%;
+            background-image: url(../images/icon-paper.svg);
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .scissorImage {
+            height: 50%;
+            width: 45%;
+            background-image: url(../images/icon-scissors.svg);
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .rockImage {
+            height: 50%;
+            width: 45%;
+            background-image: url(../images/icon-rock.svg);
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        #multiplayerBtn {
+            left: 2%;
+            top: 10%;
+            grid-area: menuPVP;
+            width: 10%;
+            height: 80%;
+            display: flex;
+            flex-flow: column nowrap;
+            align-self: center;
+            text-align: center;
+            justify-content: center;
+            position: relative;
+            color: hsl(217, 16%, 45%);
+            font-family: "Barlow Semi Condensed", sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px hsl(217, 16%, 45%) solid;
+            border-radius: 5px;
+        }
+        #multiplayerMenu {
+            z-index: 8;
+            position: absolute;
+            display: none;
+            height: 100%;
+            width: 100%;
+        }
+        #titleScoreContainer {
+            align-self: center;
+            justify-self: center;
+            grid-area: scoreView;
+            position: relative;
+            display: flex;
+            flex-flow: row nowrap;
+            top: 5%;
+            justify-content: space-between;
+            align-items: center;
+            height: 70%;
+            width: 60%;
+            border: 3px hsl(217, 16%, 45%) solid;
+            border-radius: 12px;
+            #titleContainer {
+                margin-left: 5%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                height: 80%;
+                width: 30%;
+                background-image: url(../images/logo.svg);
+                background-position: center;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+            #ScoreContainer {
+                border: 2px white solid;
+                border-radius: 12px;
+                background-color: white;
+                margin-right: 5%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                height: 80%;
+                width: 30%;
+                #Scoretilte {
+                    text-align: center;
+                    height: 20%;
+                    width: 100%;
+                    color: hsl(229, 64%, 46%);
+                    font-size: 24px;
+                }
+                #ScoreCounter {
+                    text-align: center;
+                    height: 60%;
+                    width: 100%;
+                    color: hsl(229, 25%, 31%);
+                    font-size: 3rem;
+                }
+            }
+        }
+        #ChoicesContainer {
+            align-self: center;
+            justify-self: center;
+            grid-area: choiceView;
+            display: flex;
+            flex-flow: row nowrap;
+            position: relative;
+            height: 100%;
+            width: 70%;
+            #ChoiceBackGround {
+                left: 15%;
+                height: 70%;
+                width: 70%;
+                position: absolute;
+                z-index: 0;
+                align-self: center;
+                justify-self: center;
+                background-image: url(../images/bg-triangle.svg);
+                background-position: center;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+            #choicesHolder {
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .choice {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                height: 100%;
+                width: 35%;
+                border: 1px solid grey;
+            }
+            .choiceBackground {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: aliceblue;
+                height: 80%;
+                width: 80%;
+            }
+            #paper {
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+            }
+            #scissors {
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+            }
+            #rock {
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+            }
+            #TopChoice {
+                height: 40%;
+                width: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            #bottomChoice {
+                height: 40%;
+                width: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        #rulesHolder {
+            position: relative;
+            grid-area: rulesView;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: flex-end;
+            right: 5%;
+            #rules {
+                height: 60%;
+                width: 10%;
+                border: 3px hsl(217, 16%, 45%) solid;
+                color: hsl(229, 25%, 31%);
+                text-align: center;
+                font-size: 2rem;
+                border-radius: 10px;
+            }
+        }
+        #overlay {
+            position: fixed;
+            display: none;
+            z-index: 8;
+            background-color: rgba(0, 0, 0, 0.463);
+            height: 100vh;
+            width: 100vw;
+            pointer-events: all;
+        }
+        #rulesModal {
+            display: none;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            height: 400px;
+            width: 400px;
+            z-index: 9;
+            background-color: aliceblue;
+            border-radius: 12px;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            #closeRulesBtnHolder {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-between;
+                height: 10%;
+                width: 90%;
+                #RulesTitle {
+                    color: hsl(229, 25%, 31%);
+                    font-size: 2rem;
+                }
+            }
+            #rulesImage {
+                height: 90%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        #PickedChoiceContainer {
+            align-self: center;
+            justify-self: center;
+            grid-area: choiceView;
+            display: none;
+            grid-template-columns: 40% 20% 40%;
+            grid-template-areas: "myChoice winLoose AiChoice";
+            position: relative;
+            height: 75%;
+            width: 90%;
+            .blankBackground {
+                background-color: aqua;
+            }
+            #MyChoice {
+                grid-area: myChoice;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                .choiceTitle {
+                    font-size: 1.6rem;
+                    color: white;
+                }
+                .choice {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    height: 80%;
+                    width: 90%;
+                    border: 1px solid grey;
+                }
+                #myPaper {
+                    display: none;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+                }
+                #myScissors {
+                    display: none;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+                }
+                #myRock {
+                    display: none;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+                }
+                .choiceBackground {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: aliceblue;
+                    height: 80%;
+                    width: 80%;
+                }
+            }
+            #AIChoice {
+                grid-area: AiChoice;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                .choiceTitle {
+                    font-size: 1.6rem;
+                    color: white;
+                }
+                .choice {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    height: 80%;
+                    width: 90%;
+                }
+                #AiBlank {
+                    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+                }
+                #AiPaper {
+                    display: none;
+                    border: 1px white solid;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+                }
+                #AiScissors {
+                    display: none;
+                    border: 1px white solid;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+                }
+                #AiRock {
+                    display: none;
+                    border: 1px white solid;
+                    box-shadow: -5px, 5px grey;
+                    background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+                }
+                .choiceBackground {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: aliceblue;
+                    height: 80%;
+                    width: 80%;
+                }
+            }
+            #winLoseView {
+                grid-area: winLoose;
+                display: none;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                #winLoseText {
+                    font-size: 3rem;
+                    color: aliceblue;
+                }
+                #PlayAgainButton {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    color: hsl(217, 16%, 45%);
+                    height: 10%;
+                    width: 100%;
+                    background-color: aliceblue;
+                    border-radius: 12px;
+                }
+            }
+            #rules:hover {
+                cursor: pointer;
+            }
+            .choice:hover {
+                cursor: pointer;
+            }
+            #PlayAgainButton:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .attribution {
+        position: absolute;
+        bottom: 0%;
+        font-size: 11px;
+        text-align: center;
+    }
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
+}
