@@ -30,6 +30,8 @@ const enemyName = document.getElementById("enemyName");
 const readyEnemyButton = document.getElementById("readyEnemyButton");
 const enemyReadyText = document.getElementById("enemyReadyText");
 const GameRoomTitle = document.getElementById("GameRoomTitle");
+const WarningLoggerText = document.getElementById("WarningLoggerText");
+const WarningLogger = document.getElementById("WarningLogger");
 /////////////////////////////////////////////////////
 //                 Initialization                  //
 ////////////////////////////////////////////////////
@@ -127,8 +129,12 @@ const EditDisplayName = () => {
 //                 DataBase Management             //
 ////////////////////////////////////////////////////
 
+
 const JoinById = async(id) => {
-    var user = auth.currentUser;
+
+    if (user == null) {
+        return;
+    }
     const Gameref = doc(db, "Games", id);
     updateDoc(Gameref, {
         InProgress: true,
@@ -204,6 +210,12 @@ const GetGameList = async() => {
 /////////////////////////////////////////////////////
 //                Plumbing                        //
 ////////////////////////////////////////////////////
+const CheckForGameAndUpdateUI = () => {
+
+}
+const ShowWarning = (errorCode, errorMessage) => {
+    alert(`Error: ${errorCode}. \n Message: ${errorMessage}`);
+}
 const UpdateHostName = (string) => hostName.textContent = string;
 const UpdateChallengerName = (string) => enemyName.textContent = string;
 const UpdateGameRoomTitle = (string) => GameRoomTitle.textContent = string;
@@ -211,6 +223,8 @@ const UpdateHostReady = () => {
     if (user.uid == ActiveGame.Host.id) {
         hostReadyText.textContent = "Host Ready !";
         hostReadyText.style.color = "greenyellow";
+    } else {
+        ShowWarning("You Are Not The Host!", "Try clicking the Challenger's 'Ready' button instead. ");
     }
 
 }
@@ -218,6 +232,8 @@ const UpdateChallengerReady = () => {
     if (user.uid == ActiveGame.Challenger.id) {
         enemyReadyText.textContent = "Host Ready !";
         enemyReadyText.style.color = "greenyellow";
+    } else {
+        ShowWarning("Wait For Challenger!", "Try clicking the Host's 'Ready' button instead. ");
     }
 }
 const UpdateGameRoomUI = () => {
@@ -230,6 +246,12 @@ const ShowGameRoom = () => {
     GameListView.style.display = "none";
     GameRoomView.style.display = "flex";
     GameTitleView.style.display = "flex";
+}
+const ShowGameListView = () => {
+    GameRoomView.style.display = "none";
+    GameTitleView.style.display = "none";
+    LoggedInView.style.display = "flex";
+    GameListView.style.display = "flex";
 }
 const UpdateActiveGame = (data) => {
     ActiveGame.Challenger.id = data.Challenger.id;
@@ -284,6 +306,15 @@ const HideUserStatsView = () => {
     SignUpView.style.display = "flex";
 
 }
+const RefreshGameRoomUI = () => {
+    if (ActiveGame.GameName == "") {
+        ShowGameListView();
+    }
+    if (ActiveGame.GameName != "") {
+        ShowGameRoom();
+        UpdateGameRoomUI();
+    }
+}
 const ShowEditNameInput = () => editNameInputHolder.style.display = "flex";
 const HideEditNameInput = () => editNameInputHolder.style.display = "none";
 const ShowMultiplayerMenu = () => multiplayerMenu.style.display = "grid";
@@ -321,3 +352,4 @@ setNameBtn.addEventListener('click', EditDisplayName);
 readyHostButton.addEventListener('click', UpdateHostReady);
 readyEnemyButton.addEventListener('click', UpdateChallengerReady);
 setTimeout(RefreshGamesList, 2000);
+setTimeout(RefreshGameRoomUI, 2200);

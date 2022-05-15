@@ -357,7 +357,7 @@
                                             width: 95%;
                                             background-image: radial-gradient(hsl(218, 10%, 78%), hsl(217, 66%, 71%));
                                             grid-area: CreateGameView;
-                                            display: flex;
+                                            display: none;
                                             flex-flow: column nowrap;
                                             justify-content: space-between;
                                             align-items: center;
@@ -374,7 +374,7 @@
                                             align-self: center;
                                             grid-area: GamesView;
                                             position: relative;
-                                            display: flex;
+                                            display: none;
                                             flex-flow: column nowrap;
                                             align-items: center;
                                             justify-content: space-evenly;
