@@ -1,0 +1,27 @@
+{
+    "name": "rock-paper-scissors-tt",
+    "version": "1.0.0",
+    "description": "This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+    "main": "index.js",
+    "scripts": {
+        "build": "D:/rock-paper-scissors-master/rock-paper-scissors-challenge/Rock-Paper-Scissors-TT/node_modules/.bin/webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alphacrutch/Rock-Paper-Scissors-TT.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/alphacrutch/Rock-Paper-Scissors-TT/issues"
+    },
+    "homepage": "https://github.com/alphacrutch/Rock-Paper-Scissors-TT#readme",
+    "dependencies": {
+        "firebase": "^9.8.1"
+    },
+    "devDependencies": {
+        "webpack": "^5.72.1",
+        "webpack-cli": "^4.9.2"
+    }
+}
