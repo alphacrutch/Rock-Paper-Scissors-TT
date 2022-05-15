@@ -29,6 +29,7 @@ const hostReadyText = document.getElementById("hostReadyText");
 const enemyName = document.getElementById("enemyName");
 const readyEnemyButton = document.getElementById("readyEnemyButton");
 const enemyReadyText = document.getElementById("enemyReadyText");
+const GameRoomTitle = document.getElementById("GameRoomTitle");
 /////////////////////////////////////////////////////
 //                 Initialization                  //
 ////////////////////////////////////////////////////
@@ -66,6 +67,7 @@ var ActiveGame = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const user = auth.currentUser;
 /////////////////////////////////////////////////////
 //                 Authentication                  //
 ////////////////////////////////////////////////////
@@ -128,7 +130,7 @@ const EditDisplayName = () => {
 const JoinById = async(id) => {
     var user = auth.currentUser;
     const Gameref = doc(db, "Games", id);
-    await updateDoc(Gameref, {
+    updateDoc(Gameref, {
         InProgress: true,
         Challenger: {
             displayName: user.displayName,
@@ -137,6 +139,10 @@ const JoinById = async(id) => {
             id: user.uid,
             score: 0
         }
+    }).then((doc) => {
+        UpdateActiveGame(doc.data());
+        ShowGameRoom();
+        UpdateGameRoomUI();
     }).catch(e => alert(e.message));
 
 }
@@ -176,7 +182,13 @@ const CreateGame = async() => {
             score: 0
         }
     }
-    await setDoc(doc(db, "Games", user.uid), ActiveGame);
+    setDoc(doc(db, "Games", user.uid), ActiveGame).then(
+        () => {
+            ShowGameRoom();
+            UpdateHostName(ActiveGame.Host.displayName);
+            UpdateGameRoomTitle(ActiveGame.GameName + "'s Room");
+        }
+    ).catch(e => console.log(e));
 }
 const GetGameList = async() => {
     ClearRooms();
@@ -188,34 +200,38 @@ const GetGameList = async() => {
     });
     setTimeout(SetJoinButtonListeners, 1500);
 }
-const UpdateReady = () => {
-        var user = auth.currentUser;
-        if (user.uid == ActiveGame.Host.id) {
 
-        }
-
-    }
-    /////////////////////////////////////////////////////
-    //                Plumbing                        //
-    ////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+//                Plumbing                        //
+////////////////////////////////////////////////////
 const UpdateHostName = (string) => hostName.textContent = string;
 const UpdateChallengerName = (string) => enemyName.textContent = string;
+const UpdateGameRoomTitle = (string) => GameRoomTitle.textContent = string;
 const UpdateHostReady = () => {
-    hostReadyText.textContent = "Host Ready !";
-    hostReadyText.style.color = "greenyellow";
+    if (user.uid == ActiveGame.Host.id) {
+        hostReadyText.textContent = "Host Ready !";
+        hostReadyText.style.color = "greenyellow";
+    }
+
 }
 const UpdateChallengerReady = () => {
-    enemyReadyText.textContent = "Host Ready !";
-    enemyReadyText.style.color = "greenyellow";
+    if (user.uid == ActiveGame.Challenger.id) {
+        enemyReadyText.textContent = "Host Ready !";
+        enemyReadyText.style.color = "greenyellow";
+    }
 }
-
+const UpdateGameRoomUI = () => {
+    UpdateHostName(ActiveGame.Host.displayName);
+    UpdateChallengerName(ActiveGame.Challenger.displayName);
+    UpdateGameRoomTitle(ActiveGame.GameName + "'s Room");
+}
 const ShowGameRoom = () => {
     LoggedInView.style.display = "none";
     GameListView.style.display = "none";
     GameRoomView.style.display = "flex";
     GameTitleView.style.display = "flex";
 }
-const SetActiveGame = (data) => {
+const UpdateActiveGame = (data) => {
     ActiveGame.Challenger.id = data.Challenger.id;
     ActiveGame.Challenger.Ready = data.Challenger.Ready;
     ActiveGame.Challenger.RoundPick = data.Challenger.RoundPick;
