@@ -50,812 +50,6 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
-  Main #multiplayerBtn {
-    left: 2%;
-    top: 10%;
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: menuPVP;
-    width: 100%;
-    height: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -ms-flex-item-align: center;
-        align-self: center;
-    text-align: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  Main #multiplayerBtn a {
-    width: 30%;
-    height: 80%;
-    text-decoration: none;
-    position: relative;
-    color: #606e85;
-    font-family: "Barlow Semi Condensed", sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border: 2px #606e85 solid;
-    border-radius: 5px;
-  }
-  Main #multiplayerBtn #pvpMenuBtn {
-    width: 30%;
-    height: 80%;
-    position: relative;
-    color: #606e85;
-    font-family: "Barlow Semi Condensed", sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border: 2px #606e85 solid;
-    border-radius: 5px;
-  }
-  Main #multiplayerMenu {
-    z-index: 8;
-    position: absolute;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: 8% 12% 80%;
-        grid-template-rows: 8% 12% 80%;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
-        grid-template-areas: "pvpTitle" " statusView" " mainView";
-    height: 100%;
-    width: 100%;
-    background-color: rgba(62, 58, 58, 0.931);
-  }
-  Main #multiplayerMenu #PVPtitleWrap {
-    height: 100%;
-    width: 100%;
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: pvpTitle;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  Main #multiplayerMenu #PVPtitleWrap #pvpTitle {
-    position: relative;
-    text-align: center;
-    height: 50%;
-    width: 40%;
-    color: #ec9e0e;
-    font-family: "Barlow Semi Condensed", sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-  }
-  Main #multiplayerMenu #PVPtitleWrap #pvpCloseBtn {
-    position: relative;
-    right: 5%;
-    border-radius: 5px;
-    background-image: url(../images/icon-close.svg);
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-color: #e72608;
-    height: 50%;
-    width: 8%;
-  }
-  Main #multiplayerMenu #SignUpView {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: statusView;
-    height: 100%;
-    width: 100%;
-    display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  Main #multiplayerMenu #SignUpView .AuthBtns {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: #a0aec5;
-    border-radius: 5px;
-  }
-  Main #multiplayerMenu #SignUpView .BtnText {
-    color: #606e85;
-    font-family: "Barlow Semi Condensed", sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-  }
-  Main #multiplayerMenu #SignUpView #AuthBtnsHolder {
-    height: 100%;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  Main #multiplayerMenu #SignUpView #AuthBtnsHolder #Loginbtn {
-    height: 80%;
-    width: 40%;
-  }
-  Main #multiplayerMenu #SignUpView #AuthBtnsHolder #SignUpbtn {
-    height: 80%;
-    width: 40%;
-  }
-  Main #multiplayerMenu #SignUpView #AuthInputsHolder {
-    height: 100%;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  Main #multiplayerMenu #LoggedInView {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    -ms-grid-column-align: center;
-        justify-self: center;
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: statusView;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    height: 95%;
-    width: 95%;
-    border-radius: 9px;
-    background-image: radial-gradient(#e8c37d, #bf913b);
-  }
-  Main #multiplayerMenu #LoggedInView #editNameInputHolder {
-    height: 65%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  Main #multiplayerMenu #LoggedInView #editNameInputHolder #editNameInput {
-    background-color: #a0aec5;
-    border-radius: 5px;
-  }
-  Main #multiplayerMenu #LoggedInView #editNameInputHolder #setNameBtn {
-    text-align: center;
-    border-radius: 5px;
-    width: 60%;
-    background-color: #a0aec5;
-  }
-  Main #multiplayerMenu #LoggedInView #LogoutBtn {
-    background-image: radial-gradient(#a0aec5, #4c7bc8);
-    text-align: center;
-    height: 35%;
-    width: 20%;
-    border-radius: 5px;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-    position: relative;
-    right: 2%;
-    bottom: 5%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  Main #multiplayerMenu #MainView {
-    -ms-grid-row-align: center;
-        align-self: center;
-    -ms-grid-column-align: center;
-        justify-self: center;
-    height: 98%;
-    width: 100%;
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    grid-area: mainView;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
-    -ms-grid-rows: 25% 75%;
-        grid-template-rows: 25% 75%;
-        grid-template-areas: "CreateGameView" "GamesView";
-  }
-  Main #multiplayerMenu #MainView #CreateGameView {
-    -ms-grid-column-align: center;
-        justify-self: center;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    height: 98%;
-    width: 95%;
-    background-image: radial-gradient(#c1c5cd, #84aae6);
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: CreateGameView;
-    display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    border-radius: 9px;
-  }
-  Main #multiplayerMenu #MainView #CreateGameView #CreateGameTitle {
-    font-size: 1.2rem;
-    color: #2cfd08;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-  }
-  Main #multiplayerMenu #MainView #CreateGameView #ScoreLimitView {
-    height: 60%;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  Main #multiplayerMenu #MainView #CreateGameView #ScoreLimitView #ScoreLimitTitle {
-    height: 25%;
-    font-size: 1.2rem;
-    color: #202222;
-  }
-  Main #multiplayerMenu #MainView #CreateGameView #ScoreLimitView #ScoreLimitRadios {
-    height: 75%;
-    width: 70%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  Main #multiplayerMenu #MainView #CreateGameView #ScoreLimitView #ScoreLimitRadios div {
-    height: 50%;
-    width: 45%;
-  }
-  Main #multiplayerMenu #MainView #CreateGameView #ScoreLimitView #ScoreLimitRadios div label {
-    font-size: 1.1rem;
-    font-family: cursive;
-  }
-  Main #multiplayerMenu #MainView #CreateGameView #ScoreLimitView #ScoreLimitRadios div input {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    border: 2px solid white;
-    -webkit-transition: 0.2s all linear;
-    transition: 0.2s all linear;
-    margin-right: 5px;
-    position: relative;
-    top: 4px;
-  }
-  Main #multiplayerMenu #MainView #CreateGameView #ScoreLimitView #ScoreLimitRadios div input:checked {
-    border: 6px solid #635c5c;
-    outline: unset;
-  }
-  Main #multiplayerMenu #MainView #CreateGameView #createGameButton {
-    position: relative;
-    bottom: 3%;
-    height: 19%;
-    width: 80%;
-    background-image: -webkit-gradient(linear, left top, right bottom, from(#81f505), color-stop(#cefb9d), to(#81f505));
-    background-image: linear-gradient(to bottom right, #81f505, #cefb9d, #81f505);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    border-radius: 9px;
-  }
-  Main #multiplayerMenu #MainView #GamesListView {
-    -ms-grid-column-align: center;
-        justify-self: center;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: GamesView;
-    position: relative;
-    display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 92%;
-    width: 91%;
-    padding: 1%;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#c1c5cd), to(#84aae6));
-    background-image: linear-gradient(#c1c5cd, #84aae6);
-    border-radius: 9px;
-  }
-  Main #multiplayerMenu #MainView #GamesListView .RoomItem {
-    background-image: -webkit-gradient(linear, left top, right top, from(#84aae6), color-stop(#c1c5cd), to(#84aae6));
-    background-image: linear-gradient(to right, #84aae6, #c1c5cd, #84aae6);
-    border: 1px #84aae6 solid;
-    border-radius: 5px;
-    width: 98%;
-    height: 10%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  Main #multiplayerMenu #MainView #GamesListView .RoomItem .RoomName {
-    position: relative;
-    left: 1%;
-    font-size: 1.1rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: left;
-    width: 45%;
-  }
-  Main #multiplayerMenu #MainView #GamesListView .RoomItem .roomPoints {
-    width: 20%;
-    font-size: 1.1rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-  }
-  Main #multiplayerMenu #MainView #GamesListView .RoomItem .joinButton {
-    border-radius: 5px;
-    position: relative;
-    right: 2%;
-    background-color: #71dc71;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 25%;
-    color: green;
-    font-size: 1.1rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-  }
-  Main #multiplayerMenu #MainView #GameTitleView {
-    justify-self: center;
-    -ms-flex-item-align: center;
-        align-self: center;
-    height: 98%;
-    width: 95%;
-    background-image: radial-gradient(#c1c5cd, #84aae6);
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: CreateGameView;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    border-radius: 9px;
-  }
-  Main #multiplayerMenu #MainView #GameTitleView #GameRoomTitle {
-    font-size: 1.2rem;
-    color: #2cfd08;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-  }
-  Main #multiplayerMenu #MainView #GameRoomView {
-    justify-self: center;
-    -ms-flex-item-align: center;
-        align-self: center;
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: GamesView;
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    height: 92%;
-    width: 91%;
-    padding: 1%;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#c1c5cd), to(#84aae6));
-    background-image: linear-gradient(#c1c5cd, #84aae6);
-    border-radius: 9px;
-  }
-  Main #multiplayerMenu #MainView #GameRoomView .playerInfo {
-    height: 50%;
-    width: 45%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  Main #multiplayerMenu #MainView #GameRoomView .readyButton {
-    color: red;
-    height: 50%;
-    width: 45%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: blue;
-    border-radius: 9px;
-  }
-  Main #multiplayerMenu #MainView #GameRoomView .InfoHolder {
-    width: 90%;
-    height: 40%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  Main #multiplayerMenu #MainView #GameRoomView .InfoHolder label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  Main #multiplayerMenu #MainView #GameRoomView .InfoHolder div {
-    font-family: cursive;
-  }
-  Main #titleScoreContainer {
-    -ms-flex-item-align: center;
-        align-self: center;
-    justify-self: center;
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: scoreView;
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 60%;
-    width: 80%;
-    border: 3px #606e85 solid;
-    border-radius: 5px;
-  }
-  Main #titleScoreContainer #titleContainer {
-    position: relative;
-    height: 80%;
-    width: 40%;
-    background-image: url(../images/logo.svg);
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  }
-  Main #titleScoreContainer #ScoreContainer {
-    border: 2px white solid;
-    border-radius: 5px;
-    background-color: white;
-    margin-right: 5%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 80%;
-    width: 30%;
-  }
-  Main #titleScoreContainer #ScoreContainer #Scoretilte {
-    font-weight: 600;
-    font-family: "Barlow Semi Condensed", sans-serif;
-    text-align: center;
-    height: 20%;
-    width: 98%;
-    color: #2a46c0;
-    font-size: 24px;
-  }
-  Main #titleScoreContainer #ScoreContainer #ScoreCounter {
-    font-weight: 600;
-    font-family: "Barlow Semi Condensed", sans-serif;
-    text-align: center;
-    height: 60%;
-    width: 98%;
-    color: #606e85;
-    font-size: 3rem;
-  }
-  Main #ChoicesContainer {
-    -ms-flex-item-align: center;
-        align-self: center;
-    justify-self: center;
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    grid-area: choiceView;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    position: relative;
-    height: 80%;
-    width: 100%;
-  }
-  Main #ChoicesContainer #ChoiceBackGround {
-    top: 15%;
-    height: 80%;
-    width: 80%;
-    position: absolute;
-    z-index: 0;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    background-image: url(../images/bg-triangle.svg);
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  }
-  Main #ChoicesContainer #choicesHolder {
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-  }
-  Main #ChoicesContainer .choice {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    border-radius: 50%;
-    height: 100%;
-    width: 40%;
-    border: 1px solid grey;
-  }
-  Main #ChoicesContainer .choiceBackground {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    border-radius: 50%;
-    background-color: aliceblue;
-    height: 80%;
-    width: 80%;
-  }
-  Main #ChoicesContainer #paper {
-    -webkit-box-shadow: -5px, 5px grey;
-            box-shadow: -5px, 5px grey;
-    background-image: radial-gradient(#4865f4, #5671f5);
-  }
-  Main #ChoicesContainer #scissors {
-    -webkit-box-shadow: -5px, 5px grey;
-            box-shadow: -5px, 5px grey;
-    background-image: radial-gradient(#ec9e0e, #eca922);
-  }
-  Main #ChoicesContainer #rock {
-    -webkit-box-shadow: -5px, 5px grey;
-            box-shadow: -5px, 5px grey;
-    background-image: radial-gradient(#dc2e4e, #dd405d);
-  }
-  Main #ChoicesContainer #TopChoice {
-    height: 40%;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  Main #ChoicesContainer #bottomChoice {
-    height: 40%;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   Main #rulesHolder {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
@@ -894,8 +88,49 @@
     width: 100%;
     pointer-events: all;
   }
-  Main #rulesModal {
-    display: none;
+  Main #rules:hover {
+    cursor: pointer;
+  }
+  Main .choice:hover {
+    cursor: pointer;
+  }
+  #ChoicesContainer {
+    -ms-flex-item-align: center;
+        align-self: center;
+    justify-self: center;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: choiceView;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    position: relative;
+    height: 80%;
+    width: 100%;
+  }
+  #ChoicesContainer #ChoiceBackGround {
+    top: 15%;
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    z-index: 0;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    background-image: url(../images/bg-triangle.svg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #ChoicesContainer #choicesHolder {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
@@ -906,16 +141,11 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    z-index: 9;
-    background-color: aliceblue;
-    border-radius: 12px;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
   }
-  Main #rulesModal #closeRulesBtnHolder {
-    margin-top: 10%;
-    position: absolute;
+  #ChoicesContainer .choice {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -926,18 +156,68 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    height: 100%;
+    width: 40%;
+    border: 1px solid grey;
+  }
+  #ChoicesContainer .choiceBackground {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    background-color: aliceblue;
     height: 80%;
-    width: 90%;
+    width: 80%;
   }
-  Main #rulesModal #closeRulesBtnHolder #RulesTitle {
-    color: #3b4363;
-    font-size: 2rem;
+  #ChoicesContainer #paper {
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#4865f4, #5671f5);
   }
-  Main #rulesModal #rulesImage {
-    height: 90%;
+  #ChoicesContainer #scissors {
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#ec9e0e, #eca922);
+  }
+  #ChoicesContainer #rock {
+    -webkit-box-shadow: -5px, 5px grey;
+            box-shadow: -5px, 5px grey;
+    background-image: radial-gradient(#dc2e4e, #dd405d);
+  }
+  #ChoicesContainer #TopChoice {
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #ChoicesContainer #bottomChoice {
+    height: 40%;
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -952,7 +232,7 @@
         -ms-flex-pack: center;
             justify-content: center;
   }
-  Main #PickedChoiceContainer {
+  #PickedChoiceContainer {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: choiceView;
@@ -973,10 +253,68 @@
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  Main #PickedChoiceContainer .blankBackground {
+  #PickedChoiceContainer .blankBackground {
     background-color: aqua;
   }
-  Main #PickedChoiceContainer #MyChoice {
+  #rulesModal {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9;
+    background-color: aliceblue;
+    border-radius: 12px;
+  }
+  #rulesModal #closeRulesBtnHolder {
+    margin-top: 10%;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 80%;
+    width: 90%;
+  }
+  #rulesModal #closeRulesBtnHolder #RulesTitle {
+    color: #3b4363;
+    font-size: 2rem;
+  }
+  #rulesModal #rulesImage {
+    height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #MyChoice {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: myChoice;
@@ -998,7 +336,7 @@
     height: 100%;
     width: 100%;
   }
-  Main #PickedChoiceContainer #MyChoice .choiceTitle {
+  #MyChoice .choiceTitle {
     font-family: "Barlow Semi Condensed", sans-serif;
     position: relative;
     top: 70%;
@@ -1007,7 +345,7 @@
     font-weight: 600;
     color: white;
   }
-  Main #PickedChoiceContainer #MyChoice .choice {
+  #MyChoice .choice {
     position: relative;
     top: 0;
     display: -webkit-box;
@@ -1028,25 +366,25 @@
     width: 70%;
     border: 1px solid grey;
   }
-  Main #PickedChoiceContainer #MyChoice #myPaper {
+  #MyChoice #myPaper {
     display: none;
     -webkit-box-shadow: -5px, 5px grey;
             box-shadow: -5px, 5px grey;
     background-image: radial-gradient(#4865f4, #5671f5);
   }
-  Main #PickedChoiceContainer #MyChoice #myScissors {
+  #MyChoice #myScissors {
     display: none;
     -webkit-box-shadow: -5px, 5px grey;
             box-shadow: -5px, 5px grey;
     background-image: radial-gradient(#ec9e0e, #eca922);
   }
-  Main #PickedChoiceContainer #MyChoice #myRock {
+  #MyChoice #myRock {
     display: none;
     -webkit-box-shadow: -5px, 5px grey;
             box-shadow: -5px, 5px grey;
     background-image: radial-gradient(#dc2e4e, #dd405d);
   }
-  Main #PickedChoiceContainer #MyChoice .choiceBackground {
+  #MyChoice .choiceBackground {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1065,7 +403,7 @@
     height: 80%;
     width: 80%;
   }
-  Main #PickedChoiceContainer #AIChoice {
+  #AIChoice {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: AiChoice;
@@ -1085,7 +423,7 @@
     height: 100%;
     width: 100%;
   }
-  Main #PickedChoiceContainer #AIChoice .choiceTitle {
+  #AIChoice .choiceTitle {
     font-family: "Barlow Semi Condensed", sans-serif;
     position: relative;
     top: 70%;
@@ -1094,7 +432,7 @@
     font-weight: 600;
     color: white;
   }
-  Main #PickedChoiceContainer #AIChoice .choice {
+  #AIChoice .choice {
     position: relative;
     top: 0;
     display: -webkit-box;
@@ -1114,31 +452,31 @@
     height: 50%;
     width: 70%;
   }
-  Main #PickedChoiceContainer #AIChoice #AiBlank {
+  #AIChoice #AiBlank {
     background-image: radial-gradient(#1f3756, #141539);
   }
-  Main #PickedChoiceContainer #AIChoice #AiPaper {
+  #AIChoice #AiPaper {
     display: none;
     border: 1px white solid;
     -webkit-box-shadow: -5px, 5px grey;
             box-shadow: -5px, 5px grey;
     background-image: radial-gradient(#4865f4, #5671f5);
   }
-  Main #PickedChoiceContainer #AIChoice #AiScissors {
+  #AIChoice #AiScissors {
     display: none;
     border: 1px white solid;
     -webkit-box-shadow: -5px, 5px grey;
             box-shadow: -5px, 5px grey;
     background-image: radial-gradient(#ec9e0e, #eca922);
   }
-  Main #PickedChoiceContainer #AIChoice #AiRock {
+  #AIChoice #AiRock {
     display: none;
     border: 1px white solid;
     -webkit-box-shadow: -5px, 5px grey;
             box-shadow: -5px, 5px grey;
     background-image: radial-gradient(#dc2e4e, #dd405d);
   }
-  Main #PickedChoiceContainer #AIChoice .choiceBackground {
+  #AIChoice .choiceBackground {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1157,7 +495,7 @@
     height: 80%;
     width: 80%;
   }
-  Main #PickedChoiceContainer #winLoseView {
+  #winLoseView {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
@@ -1177,7 +515,7 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  Main #PickedChoiceContainer #winLoseView #winLoseText {
+  #winLoseView #winLoseText {
     font-family: "Barlow Semi Condensed", sans-serif;
     font-weight: 600;
     -ms-flex-item-align: center;
@@ -1186,7 +524,55 @@
     font-size: 3rem;
     color: aliceblue;
   }
-  Main #PickedChoiceContainer #winLoseView #PlayAgainButton {
+  #multiplayerBtn {
+    left: 2%;
+    top: 10%;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: menuPVP;
+    width: 100%;
+    height: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-item-align: center;
+        align-self: center;
+    text-align: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #multiplayerBtn a {
+    width: 30%;
+    height: 80%;
+    text-decoration: none;
+    position: relative;
+    color: #606e85;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 2px #606e85 solid;
+    border-radius: 5px;
+  }
+  #multiplayerBtn #pvpMenuBtn {
+    width: 30%;
+    height: 80%;
+    position: relative;
+    color: #606e85;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 2px #606e85 solid;
+    border-radius: 5px;
+  }
+  #PlayAgainButton {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1210,16 +596,371 @@
     font-weight: 600;
     font-family: "Barlow Semi Condensed", sans-serif;
   }
-  Main #rules:hover {
+  #PlayAgainButton:hover {
     cursor: pointer;
   }
-  Main .choice:hover {
-    cursor: pointer;
+  #multiplayerMenu {
+    z-index: 8;
+    position: absolute;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 8% 12% 80%;
+        grid-template-rows: 8% 12% 80%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+        grid-template-areas: "pvpTitle" " statusView" " mainView";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(62, 58, 58, 0.931);
   }
-  Main #PlayAgainButton:hover {
-    cursor: pointer;
+  #multiplayerMenu #PVPtitleWrap {
+    height: 100%;
+    width: 100%;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: pvpTitle;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-  Main .attribution {
+  #multiplayerMenu #PVPtitleWrap #pvpTitle {
+    position: relative;
+    text-align: center;
+    height: 50%;
+    width: 40%;
+    color: #ec9e0e;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  #multiplayerMenu #PVPtitleWrap #pvpCloseBtn {
+    position: relative;
+    right: 5%;
+    border-radius: 5px;
+    background-image: url(../images/icon-close.svg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: #e72608;
+    height: 50%;
+    width: 8%;
+  }
+  #CreateGameView {
+        justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    height: 98%;
+    width: 95%;
+    background-image: radial-gradient(#c1c5cd, #84aae6);
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: CreateGameView;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 9px;
+  }
+  #CreateGameView #CreateGameTitle {
+    font-size: 1.2rem;
+    color: #2cfd08;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+  }
+  #CreateGameView #ScoreLimitView {
+    height: 60%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #CreateGameView #ScoreLimitView #ScoreLimitTitle {
+    height: 25%;
+    font-size: 1.2rem;
+    color: #202222;
+  }
+  #CreateGameView #ScoreLimitView #ScoreLimitRadios {
+    height: 75%;
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #CreateGameView #ScoreLimitView #ScoreLimitRadios div {
+    height: 50%;
+    width: 45%;
+  }
+  #CreateGameView #ScoreLimitView #ScoreLimitRadios div label {
+    font-size: 1.1rem;
+    font-family: cursive;
+  }
+  #CreateGameView #ScoreLimitView #ScoreLimitRadios div input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid white;
+    -webkit-transition: 0.2s all linear;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+    position: relative;
+    top: 4px;
+  }
+  #CreateGameView #ScoreLimitView #ScoreLimitRadios div input:checked {
+    border: 6px solid #635c5c;
+    outline: unset;
+  }
+  #CreateGameView #createGameButton {
+    position: relative;
+    bottom: 3%;
+    height: 19%;
+    width: 80%;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#81f505), color-stop(#cefb9d), to(#81f505));
+    background-image: linear-gradient(to bottom right, #81f505, #cefb9d, #81f505);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 9px;
+  }
+  #GamesListView {
+        justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: GamesView;
+    position: relative;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 92%;
+    width: 91%;
+    padding: 1%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c1c5cd), to(#84aae6));
+    background-image: linear-gradient(#c1c5cd, #84aae6);
+    border-radius: 9px;
+  }
+  #GamesListView .RoomItem {
+    background-image: -webkit-gradient(linear, left top, right top, from(#84aae6), color-stop(#c1c5cd), to(#84aae6));
+    background-image: linear-gradient(to right, #84aae6, #c1c5cd, #84aae6);
+    border: 1px #84aae6 solid;
+    border-radius: 5px;
+    width: 98%;
+    height: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #GamesListView .RoomItem .RoomName {
+    position: relative;
+    left: 1%;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    width: 45%;
+  }
+  #GamesListView .RoomItem .roomPoints {
+    width: 20%;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+  }
+  #GamesListView .RoomItem .joinButton {
+    border-radius: 5px;
+    position: relative;
+    right: 2%;
+    background-color: #71dc71;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 25%;
+    color: green;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+  }
+  #GameTitleView {
+        justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    height: 98%;
+    width: 95%;
+    background-image: radial-gradient(#c1c5cd, #84aae6);
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: CreateGameView;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 9px;
+  }
+  #GameTitleView #GameRoomTitle {
+    font-size: 1.2rem;
+    color: #2cfd08;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+  }
+  #GameRoomView {
+        justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: GamesView;
+    position: relative;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    height: 92%;
+    width: 91%;
+    padding: 1%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c1c5cd), to(#84aae6));
+    background-image: linear-gradient(#c1c5cd, #84aae6);
+    border-radius: 9px;
+  }
+  #GameRoomView .playerInfo {
+    height: 50%;
+    width: 45%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #GameRoomView .readyButton {
+    color: red;
+    height: 50%;
+    width: 45%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: blue;
+    border-radius: 9px;
+  }
+  #GameRoomView .InfoHolder {
+    width: 90%;
+    height: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #GameRoomView .InfoHolder label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #GameRoomView .InfoHolder div {
+    font-family: cursive;
+  }
+  .attribution {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1230,6 +971,257 @@
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     grid-area: attribution;
+  }
+  #LoggedInView {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: statusView;
+    display: none;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 95%;
+    width: 95%;
+    border-radius: 9px;
+    background-image: radial-gradient(#e8c37d, #bf913b);
+  }
+  #LoggedInView #editNameInputHolder {
+    height: 65%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #LoggedInView #editNameInputHolder #editNameInput {
+    background-color: #a0aec5;
+    border-radius: 5px;
+  }
+  #LoggedInView #editNameInputHolder #setNameBtn {
+    text-align: center;
+    border-radius: 5px;
+    width: 60%;
+    background-color: #a0aec5;
+  }
+  #LoggedInView #LogoutBtn {
+    background-image: radial-gradient(#a0aec5, #4c7bc8);
+    text-align: center;
+    height: 35%;
+    width: 20%;
+    border-radius: 5px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    position: relative;
+    right: 2%;
+    bottom: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #SignUpView {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: statusView;
+    height: 100%;
+    width: 100%;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #SignUpView .AuthBtns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #a0aec5;
+    border-radius: 5px;
+  }
+  #SignUpView .BtnText {
+    color: #606e85;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  #SignUpView #AuthBtnsHolder {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #SignUpView #AuthBtnsHolder #Loginbtn {
+    height: 80%;
+    width: 40%;
+  }
+  #SignUpView #AuthBtnsHolder #SignUpbtn {
+    height: 80%;
+    width: 40%;
+  }
+  #SignUpView #AuthInputsHolder {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #MainView {
+    -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    height: 98%;
+    width: 100%;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: mainView;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 25% 75%;
+        grid-template-rows: 25% 75%;
+        grid-template-areas: "CreateGameView" "GamesView";
+  }
+  #titleScoreContainer {
+    -ms-flex-item-align: center;
+        align-self: center;
+    justify-self: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: scoreView;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 60%;
+    width: 80%;
+    border: 3px #606e85 solid;
+    border-radius: 5px;
+  }
+  #titleScoreContainer #titleContainer {
+    position: relative;
+    height: 80%;
+    width: 40%;
+    background-image: url(../images/logo.svg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #titleScoreContainer #ScoreContainer {
+    border: 2px white solid;
+    border-radius: 5px;
+    background-color: white;
+    margin-right: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 80%;
+    width: 30%;
+  }
+  #titleScoreContainer #ScoreContainer #Scoretilte {
+    font-weight: 600;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    text-align: center;
+    height: 20%;
+    width: 98%;
+    color: #2a46c0;
+    font-size: 24px;
+  }
+  #titleScoreContainer #ScoreContainer #ScoreCounter {
+    font-weight: 600;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    text-align: center;
+    height: 60%;
+    width: 98%;
+    color: #606e85;
+    font-size: 3rem;
   }
 }
 /*# sourceMappingURL=multiplayerM.css.map */

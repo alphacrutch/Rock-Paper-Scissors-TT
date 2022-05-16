@@ -32,6 +32,7 @@ const enemyReadyText = document.getElementById("enemyReadyText");
 const GameRoomTitle = document.getElementById("GameRoomTitle");
 const WarningLoggerText = document.getElementById("WarningLoggerText");
 const WarningLogger = document.getElementById("WarningLogger");
+const CreateGameView = document.getElementById("CreateGameView");
 /////////////////////////////////////////////////////
 //                 Initialization                  //
 ////////////////////////////////////////////////////
@@ -206,12 +207,20 @@ const GetGameList = async() => {
     });
     setTimeout(SetJoinButtonListeners, 1500);
 }
+const CheckForGameInProgress = () => {
 
-/////////////////////////////////////////////////////
-//                Plumbing                        //
-////////////////////////////////////////////////////
+    }
+    /////////////////////////////////////////////////////
+    //                Plumbing                        //
+    ////////////////////////////////////////////////////
 const CheckForGameAndUpdateUI = () => {
-
+    if (ActiveGame)
+}
+const ShowCreateGameView = () => {
+    CreateGameView.style.display = "flex";
+}
+const HideCreateGameView = () => {
+    CreateGameView.style.display = "none";
 }
 const ShowWarning = (errorCode, errorMessage) => {
     alert(`Error: ${errorCode}. \n Message: ${errorMessage}`);
@@ -328,6 +337,7 @@ onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log(" user signed in");
         ShowUserStatsView();
+        ShowCreateGameView();
         ShowNameDisplays(user.displayName);
         if (user.displayName != null) {
             HideEditNameInput();
