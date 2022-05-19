@@ -77,7 +77,7 @@ const user = auth.currentUser;
 //                 Authentication                  //
 ////////////////////////////////////////////////////
 
-const SignUp = () => {
+const LogIn = () => {
     signInWithEmailAndPassword(auth, email.value, pass.value)
         .then((userCredential) => {
             // Signed in 
@@ -90,7 +90,7 @@ const SignUp = () => {
             alert(errorCode + "\n" + errorMessage);
         });
 }
-const LogIn = () => {
+const SignUp = () => {
 
     createUserWithEmailAndPassword(auth, email.value, pass.value)
         .then((userCredential) => {
@@ -104,7 +104,10 @@ const LogIn = () => {
         });
 }
 const LogOut = () => {
-    signOut(auth);
+    signOut(auth).then(() => {
+        HideUserStatsView();
+        HideCreateGameView();
+    }).catch(e => { console.log(`${e.code}  \n ${e.message}.`) });
 }
 const EditDisplayName = () => {
     var name = editNameInput.value;
@@ -116,12 +119,12 @@ const EditDisplayName = () => {
         alert("Name must be 4 or more letters!");
         return;
     }
-    updateProfile(auth.currentUser, {
+    updateProfile(user, {
         displayName: name,
         photoURL: " "
     }).then(() => {
         HideEditNameInput();
-        ShowNameDisplays(auth.currentUser.displayName);
+        ShowNameDisplays(user.displayName);
     }).catch((error) => {
         ClearNameDisplays();
         alert(error.code + "/n" + error.message);
@@ -226,7 +229,7 @@ const GetGameList = async() => {
 const GameInProgress = async() => {
     const gameRoomQuery = query(collection(db, "Games"), where("InProgress", "==", true));
     const querySnapshot = await getDocs(gameRoomQuery);
-    querySnapshot.forEach((doc) => {
+    return querySnapshot.forEach((doc) => {
         var data = doc.data();
         if (user.uid == data.GameId || user.uid == data.Challenger.id) {
             UpdateActiveGame(data);
@@ -374,9 +377,23 @@ const RefreshGameRoomUI = () => {
         UpdateGameRoomUI();
     }
 }
+
 const ShowEditNameInput = () => editNameInputHolder.style.display = "flex";
 const HideEditNameInput = () => editNameInputHolder.style.display = "none";
-const ShowMultiplayerMenu = () => multiplayerMenu.style.display = "grid";
+const ShowMultiplayerMenu = () => {
+    multiplayerMenu.style.display = "grid";
+    if (user != null) {
+        ShowUserStatsView();
+        ShowCreateGameView();
+        ShowGameListView();
+        HideEditNameInput();
+        RefreshGamesList();
+        RefreshGameRoomUI();
+    } else {
+        HideCreateGameView();
+        HideUserStatsView();
+    }
+}
 const HideMultiplayerMenu = () => multiplayerMenu.style.display = "none";
 const ShowNameDisplays = (name) => userName.textContent = name;
 const ClearNameDisplays = () => userName.textContent = "";
@@ -386,19 +403,25 @@ const ClearNameDisplays = () => userName.textContent = "";
 onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log(" user signed in");
-        if (GameInProgress) {
-            ShowCreateGameView();
+        ShowMultiplayerMenu();
+        if (GameInProgress()) {
+
+            ShowGameRoom();
             UpdateGameRoomTitle();
             UpdateGameRoomUI();
+            RefreshGameRoomUI();
+        } else {
+            ShowUserStatsView();
+            ShowCreateGameView();
+            ShowNameDisplays(user.displayName);
+            RefreshGamesList();
         }
-        ShowUserStatsView();
-        ShowCreateGameView();
-        ShowNameDisplays(user.displayName);
         if (user.displayName != null) {
             HideEditNameInput();
         }
     } else {
         console.log("no user");
+        HideMultiplayerMenu();
         HideUserStatsView();
 
     }
@@ -416,5 +439,3 @@ LogoutBtn.addEventListener('click', LogOut);
 setNameBtn.addEventListener('click', EditDisplayName);
 readyHostButton.addEventListener('click', UpdateHostReady);
 readyEnemyButton.addEventListener('click', UpdateChallengerReady);
-setTimeout(RefreshGamesList, 2000);
-setTimeout(RefreshGameRoomUI, 2200);
