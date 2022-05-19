@@ -432,7 +432,7 @@
         grid-area: choiceView;
         z-index: 8;
         position: relative;
-        display: grid;
+        display: none;
         grid-template-rows: 8% 12% 80%;
         grid-template-columns: 100%;
         grid-template-areas: "pvpTitle" " statusView" " mainView";
