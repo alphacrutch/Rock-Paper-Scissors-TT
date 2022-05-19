@@ -167,7 +167,7 @@ const CreateRooms = (data) => {
 </div>`;
     GameListView.innerHTML += html;
 }
-const GameExist = () => {
+const GameExist = async() => {
     const docSnap = await getDoc(myCreatedGameRef);
     if (docSnap.exists()) {
         UpdateActiveGame(docSnap.data());
@@ -223,7 +223,7 @@ const GetGameList = async() => {
     });
     setTimeout(SetJoinButtonListeners, 1500);
 }
-const GameInProgress = () => {
+const GameInProgress = async() => {
     const gameRoomQuery = query(collection(db, "Games"), where("InProgress", "==", true));
     const querySnapshot = await getDocs(gameRoomQuery);
     querySnapshot.forEach((doc) => {
@@ -242,7 +242,7 @@ const GameInProgress = () => {
     })
 }
 
-const CheckForHostReady = () => {
+const CheckForHostReady = async() => {
     const gameRoomQuery = query(collection(db, "Games"), where("Host[Ready]", "==", true));
     const querySnapshot = await getDocs(gameRoomQuery);
     querySnapshot.forEach((doc) => {
@@ -252,7 +252,7 @@ const CheckForHostReady = () => {
         }
     })
 }
-const CheckForChallengerReady = () => {
+const CheckForChallengerReady = async() => {
     const gameRoomQuery = query(collection(db, "Games"), where("Challenger[Ready]", "==", true));
     const querySnapshot = await getDocs(gameRoomQuery);
     querySnapshot.forEach((doc) => {
@@ -266,11 +266,6 @@ const CheckForChallengerReady = () => {
 /////////////////////////////////////////////////////
 //                Plumbing                        //
 ////////////////////////////////////////////////////
-const CheckForGameAndUpdateUI = () => {
-    if (ActiveGame) {
-
-    }
-}
 const ShowCreateGameView = () => {
     CreateGameView.style.display = "flex";
 }
