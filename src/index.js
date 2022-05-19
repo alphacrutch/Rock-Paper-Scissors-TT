@@ -81,8 +81,6 @@ const LogIn = () => {
     signInWithEmailAndPassword(auth, email.value, pass.value)
         .then((userCredential) => {
             // Signed in 
-            const user = userCredential.user;
-            ShowEditNameInput();
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -91,12 +89,10 @@ const LogIn = () => {
         });
 }
 const SignUp = () => {
-
     createUserWithEmailAndPassword(auth, email.value, pass.value)
         .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-
+            // Signed in            
+            ShowEditNameInput();
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -217,19 +213,21 @@ const CreateGame = async() => {
     ).catch(e => console.log(e));
 }
 const GetGameList = async() => {
-    ClearRooms();
-    const q = query(collection(db, "Games"), where("InProgress", "==", false));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
+    ClearRooms().then(async() => {
+        const q = query(collection(db, "Games"), where("InProgress", "==", false));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
 
-        CreateRooms(doc.data());
-    });
-    setTimeout(SetJoinButtonListeners, 1500);
+            CreateRooms(doc.data());
+        });
+        setTimeout(SetJoinButtonListeners, 1500);
+    }).catch(e => alert(`${e} \n ${e.code} \n ${e.message}`));
+
 }
 const GameInProgress = async() => {
     const gameRoomQuery = query(collection(db, "Games"), where("InProgress", "==", true));
     const querySnapshot = await getDocs(gameRoomQuery);
-    return querySnapshot.forEach((doc) => {
+    querySnapshot.forEach((doc) => {
         var data = doc.data();
         if (user.uid == data.GameId || user.uid == data.Challenger.id) {
             UpdateActiveGame(data);
@@ -349,7 +347,6 @@ const RefreshGamesList = () => {
 }
 const ClearRooms = async() => {
     GameListView.innerHTML = "";
-
 }
 const SetJoinButtonListeners = () => {
     for (var button of buttons) {
@@ -366,32 +363,37 @@ const ShowUserStatsView = () => {
 const HideUserStatsView = () => {
     LoggedInView.style.display = "none";
     SignUpView.style.display = "flex";
+    ClearRooms();
 
 }
 const RefreshGameRoomUI = () => {
     if (ActiveGame.GameName == "") {
         ShowGameListView();
     }
-    if (ActiveGame.GameName != "") {
-        ShowGameRoom();
+    if (ActiveGame.GameName != "" || ActiveGame.GameName != undefined || ActiveGame.GameName != null) {
         UpdateGameRoomUI();
     }
 }
-
 const ShowEditNameInput = () => editNameInputHolder.style.display = "flex";
 const HideEditNameInput = () => editNameInputHolder.style.display = "none";
-const ShowMultiplayerMenu = () => {
+const ShowMultiplayerMenu = async() => {
     multiplayerMenu.style.display = "grid";
+    var gameInProgress = await GameInProgress();
+    let user = auth.currentUser;
     if (user != null) {
-        ShowUserStatsView();
-        ShowCreateGameView();
-        ShowGameListView();
-        HideEditNameInput();
-        RefreshGamesList();
-        RefreshGameRoomUI();
-    } else {
-        HideCreateGameView();
-        HideUserStatsView();
+        if (gameInProgress) {
+            ShowGameRoom();
+            UpdateGameRoomTitle(ActiveGame.GameName);
+            UpdateGameRoomUI();
+            RefreshGameRoomUI();
+        } else {
+            ShowUserStatsView();
+            ShowCreateGameView();
+            HideEditNameInput();
+            ShowNameDisplays(user.displayName);
+            ShowGameListView();
+            RefreshGamesList();
+        }
     }
 }
 const HideMultiplayerMenu = () => multiplayerMenu.style.display = "none";
@@ -404,26 +406,10 @@ onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log(" user signed in");
         ShowMultiplayerMenu();
-        if (GameInProgress()) {
-
-            ShowGameRoom();
-            UpdateGameRoomTitle();
-            UpdateGameRoomUI();
-            RefreshGameRoomUI();
-        } else {
-            ShowUserStatsView();
-            ShowCreateGameView();
-            ShowNameDisplays(user.displayName);
-            RefreshGamesList();
-        }
-        if (user.displayName != null) {
-            HideEditNameInput();
-        }
     } else {
         console.log("no user");
         HideMultiplayerMenu();
         HideUserStatsView();
-
     }
 });
 const createGameButton = document.getElementById("createGameButton");
