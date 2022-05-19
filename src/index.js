@@ -51,6 +51,7 @@ var ActiveGame = {
     InProgress: false,
     RoundCount: 0,
     ScoreToWin: 0,
+    playerInRoom: 0,
     Host: {
         displayName: "",
         RoundPick: "",
@@ -71,6 +72,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const user = auth.currentUser;
+const myCreatedGameRef = doc(db, "Games", user.uid);
 /////////////////////////////////////////////////////
 //                 Authentication                  //
 ////////////////////////////////////////////////////
@@ -139,6 +141,7 @@ const JoinById = async(id) => {
     const Gameref = doc(db, "Games", id);
     updateDoc(Gameref, {
         InProgress: true,
+        playerInRoom: 2,
         Challenger: {
             displayName: user.displayName,
             RoundPick: "",
@@ -164,9 +167,21 @@ const CreateRooms = (data) => {
 </div>`;
     GameListView.innerHTML += html;
 }
+const GameExist = () => {
+    const docSnap = await getDoc(myCreatedGameRef);
+    if (docSnap.exists()) {
+        UpdateActiveGame(docSnap.data());
+        return true;
 
+    } else {
+        return false;
+    }
+
+}
 const CreateGame = async() => {
-    var user = auth.currentUser;
+    if (GameExist()) {
+        return;
+    }
     var pointGoal = GetSelectedPointGoal();
     ActiveGame = {
         GameId: user.uid,
@@ -174,6 +189,7 @@ const CreateGame = async() => {
         InProgress: false,
         RoundCount: 0,
         ScoreToWin: Number(pointGoal),
+        playerInRoom: 1,
         Host: {
             displayName: user.displayName,
             RoundPick: "",
@@ -189,7 +205,7 @@ const CreateGame = async() => {
             score: 0
         }
     }
-    setDoc(doc(db, "Games", user.uid), ActiveGame).then(
+    setDoc(myCreatedGameRef, ActiveGame).then(
         () => {
             ShowGameRoom();
             UpdateHostName(ActiveGame.Host.displayName);
@@ -207,14 +223,53 @@ const GetGameList = async() => {
     });
     setTimeout(SetJoinButtonListeners, 1500);
 }
-const CheckForGameInProgress = () => {
+const GameInProgress = () => {
+    const gameRoomQuery = query(collection(db, "Games"), where("InProgress", "==", true));
+    const querySnapshot = await getDocs(gameRoomQuery);
+    querySnapshot.forEach((doc) => {
+        var data = doc.data();
+        if (user.uid == data.GameId || user.uid == data.Challenger.id) {
+            UpdateActiveGame(data);
+            ShowGameRoom();
+            UpdateGameRoomUI();
+            return true;
+        }
+        if (user.uid != data.GameId && user.uid != data.Challenger.id) {
+            ActiveGame = {};
+            ShowCreateGameView();
+            return false;
+        }
+    })
+}
+
+const CheckForHostReady = () => {
+    const gameRoomQuery = query(collection(db, "Games"), where("Host[Ready]", "==", true));
+    const querySnapshot = await getDocs(gameRoomQuery);
+    querySnapshot.forEach((doc) => {
+        var data = doc.data();
+        if (data.Host.id == ActiveGame.Host.id) {
+            UpdateHostReady();
+        }
+    })
+}
+const CheckForChallengerReady = () => {
+    const gameRoomQuery = query(collection(db, "Games"), where("Challenger[Ready]", "==", true));
+    const querySnapshot = await getDocs(gameRoomQuery);
+    querySnapshot.forEach((doc) => {
+        var data = doc.data();
+        if (data.Challenger.id == ActiveGame.Challenger.id) {
+            UpdateChallengerReady();
+        }
+    })
+}
+
+/////////////////////////////////////////////////////
+//                Plumbing                        //
+////////////////////////////////////////////////////
+const CheckForGameAndUpdateUI = () => {
+    if (ActiveGame) {
 
     }
-    /////////////////////////////////////////////////////
-    //                Plumbing                        //
-    ////////////////////////////////////////////////////
-const CheckForGameAndUpdateUI = () => {
-    if (ActiveGame)
 }
 const ShowCreateGameView = () => {
     CreateGameView.style.display = "flex";
@@ -336,6 +391,11 @@ const ClearNameDisplays = () => userName.textContent = "";
 onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log(" user signed in");
+        if (GameInProgress) {
+            ShowCreateGameView();
+            UpdateGameRoomTitle();
+            UpdateGameRoomUI();
+        }
         ShowUserStatsView();
         ShowCreateGameView();
         ShowNameDisplays(user.displayName);

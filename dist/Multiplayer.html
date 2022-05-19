@@ -24,102 +24,7 @@
                 PVP Menu
             </div>
         </div>
-        <div id="multiplayerMenu">
-            <div id="PVPtitleWrap">
-                <div id="pvpTitle">PVP Menu </div>
-                <div class="button" id="pvpCloseBtn"></div>
-            </div>
-            <div id="SignUpView">
-                <div id="AuthBtnsHolder">
-                    <div class="AuthBtns button" id="Loginbtn">
-                        <div class="BtnText">Log In</div>
-                    </div>
-                    <div class="AuthBtns button" id="SignUpbtn">
-                        <div class="BtnText">Create</div>
-                    </div>
-                </div>
-                <div id="AuthInputsHolder">
-                    <div id="emailInputHolder"><input type="email" name="" id="emailInput" placeholder="Email"></div>
 
-                    <div id="passInputHolder"><input type="password" id="passwordInput" placeholder="Password"></div>
-                </div>
-            </div>
-            <div id="LoggedInView">
-                <div id="pvpMenuName">name</div>
-                <div id="playerWins">wins</div>
-                <div id="playerLosses">loses</div>
-                <div id="editNameInputHolder">
-                    <input type="text" name="" id="editNameInput" placeholder="Enter a Display Name">
-                    <div id="setNameBtn" class="button">Set Name</div>
-                </div>
-
-                <div id="LogoutBtn" class="button">
-                    <div>
-                        Logout
-                    </div>
-                </div>
-            </div>
-            <div id="MainView">
-                <div id="CreateGameView">
-                    <div id="CreateGameTitle">
-                        <div>Create A Game OR Join One Below</div>
-                    </div>
-                    <div id="ScoreLimitView">
-                        <div id="ScoreLimitTitle">Choose a Score Goal </div>
-                        <div id="ScoreLimitRadios">
-                            <div>
-                                <label for="three">3 pts</label>
-                                <input type="radio" name="scoreLimit" id="three" value="3">
-                            </div>
-                            <div>
-                                <label for="five">5 pts</label>
-                                <input type="radio" name="scoreLimit" id="five" value="5">
-                            </div>
-                            <div>
-                                <label for="seven">7 pts</label>
-                                <input type="radio" name="scoreLimit" id="seven" value="7">
-                            </div>
-                            <div>
-                                <label for="nine">9 pts</label>
-                                <input type="radio" name="scoreLimit" id="nine" value="9">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="button" id="createGameButton">
-                        <div> Create Game </div>
-                    </div>
-                </div>
-                <div id="GameTitleView">
-                    <div id="GameRoomTitle">Room Name</div>
-                </div>
-                <div id="GamesListView">
-
-                </div>
-                <div id="GameRoomView">
-                    <div class="InfoHolder">
-                        <div class="playerInfo">
-                            <label for="hostName">Host :</label>
-                            <div id="hostName">HostName</div>
-                        </div>
-                        <div id="readyHostButton" class="readyButton">
-                            <div id="hostReadyText">Not Ready</div>
-                        </div>
-                    </div>
-                    <div class="InfoHolder">
-                        <div class="playerInfo">
-                            <label for="enemyName">Challenger :</label>
-                            <div id="enemyName">Waiting For Challenger...</div>
-                        </div>
-                        <div id="readyEnemyButton" class="readyButton">
-                            <div id="enemyReadyText"> Not Ready</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
         <div id="titleScoreContainer">
             <div id="titleContainer">
 
@@ -304,7 +209,104 @@
         </div>
         <div id="overlay">
         </div>
+        <div id="multiplayerMenu">
+            <div id="PVPtitleWrap">
+                <div id="pvpTitle">PVP Menu </div>
+                <div class="button" id="pvpCloseBtn"></div>
+            </div>
+            <div id="SignUpView">
+                <div id="AuthBtnsHolder">
+                    <div class="AuthBtns button" id="Loginbtn">
+                        <div class="BtnText">Log In</div>
+                    </div>
+                    <div class="AuthBtns button" id="SignUpbtn">
+                        <div class="BtnText">Create</div>
+                    </div>
+                </div>
+                <div id="AuthInputsHolder">
+                    <div id="emailInputHolder"><input type="email" name="" id="emailInput" placeholder="Email"></div>
+
+                    <div id="passInputHolder"><input type="password" id="passwordInput" placeholder="Password"></div>
+                </div>
+            </div>
+            <div id="LoggedInView">
+                <div id="pvpMenuName">name</div>
+                <div id="playerWins">wins</div>
+                <div id="playerLosses">loses</div>
+                <div id="editNameInputHolder">
+                    <input type="text" name="" id="editNameInput" placeholder="Enter a Display Name">
+                    <div id="setNameBtn" class="button">Set Name</div>
+                </div>
+
+                <div id="LogoutBtn" class="button">
+                    <div>
+                        Logout
+                    </div>
+                </div>
+            </div>
+            <div id="MainView">
+                <div id="CreateGameView">
+                    <div id="CreateGameTitle">
+                        <div>Create A Game OR Join One Below</div>
+                    </div>
+                    <div id="ScoreLimitView">
+                        <div id="ScoreLimitTitle">Choose Point Goal </div>
+                        <div id="ScoreLimitRadios">
+                            <div>
+                                <label for="three">3 pts</label>
+                                <input type="radio" name="scoreLimit" id="three" value="3">
+                            </div>
+                            <div>
+                                <label for="five">5 pts</label>
+                                <input type="radio" name="scoreLimit" id="five" value="5">
+                            </div>
+                            <div>
+                                <label for="seven">7 pts</label>
+                                <input type="radio" name="scoreLimit" id="seven" value="7">
+                            </div>
+                            <div>
+                                <label for="nine">9 pts</label>
+                                <input type="radio" name="scoreLimit" id="nine" value="9">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="button" id="createGameButton">
+                        <div> Create Game </div>
+                    </div>
+                </div>
+                <div id="GameTitleView">
+                    <div id="GameRoomTitle">Room Name</div>
+                </div>
+                <div id="GamesListView">
+
+                </div>
+                <div id="GameRoomView">
+                    <div class="InfoHolder">
+                        <div class="playerInfo">
+                            <label for="hostName">Host :</label>
+                            <div id="hostName">HostName</div>
+                        </div>
+                        <div id="readyHostButton" class="readyButton">
+                            <div id="hostReadyText">Not Ready</div>
+                        </div>
+                    </div>
+                    <div class="InfoHolder">
+                        <div class="playerInfo">
+                            <label for="enemyName">Challenger :</label>
+                            <div id="enemyName">Waiting For Challenger...</div>
+                        </div>
+                        <div id="readyEnemyButton" class="readyButton">
+                            <div id="enemyReadyText"> Not Ready</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </Main>
+
 </body>
 <script defer src="./Scripts/game.js"></script>
 <script defer src="./bundle.js"></script>

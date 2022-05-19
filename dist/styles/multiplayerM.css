@@ -602,8 +602,7 @@
   #multiplayerMenu {
     z-index: 8;
     position: absolute;
-    display: -ms-grid;
-    display: grid;
+    display: none;
     -ms-grid-rows: 8% 12% 80%;
         grid-template-rows: 8% 12% 80%;
     -ms-grid-columns: 100%;

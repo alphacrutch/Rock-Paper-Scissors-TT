@@ -16,6 +16,9 @@
         width: 100vw;
         background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
         background-repeat: no-repeat;
+        .button:hover {
+            cursor: pointer;
+        }
         .paperImage {
             height: 50%;
             width: 45%;
@@ -40,117 +43,230 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
         }
-        #multiplayerBtn {
-            left: 2%;
-            top: 10%;
-            grid-area: menuPVP;
-            width: 10%;
-            height: 80%;
+    }
+    #titleScoreContainer {
+        align-self: center;
+        justify-self: center;
+        grid-area: scoreView;
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        top: 5%;
+        justify-content: space-between;
+        align-items: center;
+        height: 70%;
+        width: 60%;
+        border: 3px hsl(217, 16%, 45%) solid;
+        border-radius: 12px;
+        #titleContainer {
+            margin-left: 5%;
             display: flex;
             flex-flow: column nowrap;
-            align-self: center;
-            text-align: center;
             justify-content: center;
-            position: relative;
-            color: hsl(217, 16%, 45%);
-            font-family: "Barlow Semi Condensed", sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px hsl(217, 16%, 45%) solid;
-            border-radius: 5px;
+            align-items: center;
+            height: 80%;
+            width: 30%;
+            background-image: url(../images/logo.svg);
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
-        #multiplayerMenu {
-            z-index: 8;
+        #ScoreContainer {
+            border: 2px white solid;
+            border-radius: 12px;
+            background-color: white;
+            margin-right: 5%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            height: 80%;
+            width: 30%;
+            #Scoretilte {
+                text-align: center;
+                height: 20%;
+                width: 100%;
+                color: hsl(229, 64%, 46%);
+                font-size: 24px;
+            }
+            #ScoreCounter {
+                text-align: center;
+                height: 60%;
+                width: 100%;
+                color: hsl(229, 25%, 31%);
+                font-size: 3rem;
+            }
+        }
+    }
+    #ChoicesContainer {
+        z-index: 1;
+        align-self: center;
+        justify-self: center;
+        grid-area: choiceView;
+        display: flex;
+        flex-flow: row nowrap;
+        position: relative;
+        height: 100%;
+        width: 70%;
+        #ChoiceBackGround {
+            left: 15%;
+            height: 70%;
+            width: 70%;
             position: absolute;
-            display: none;
+            z-index: 0;
+            align-self: center;
+            justify-self: center;
+            background-image: url(../images/bg-triangle.svg);
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        #choicesHolder {
+            position: absolute;
+            z-index: 1;
             height: 100%;
             width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: space-evenly;
         }
-        #titleScoreContainer {
-            align-self: center;
-            justify-self: center;
-            grid-area: scoreView;
-            position: relative;
+        .choice {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            height: 100%;
+            width: 35%;
+            border: 1px solid grey;
+        }
+        .choiceBackground {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: aliceblue;
+            height: 80%;
+            width: 80%;
+        }
+        #paper {
+            box-shadow: -5px, 5px grey;
+            background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+        }
+        #scissors {
+            box-shadow: -5px, 5px grey;
+            background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+        }
+        #rock {
+            box-shadow: -5px, 5px grey;
+            background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+        }
+        #TopChoice {
+            height: 40%;
+            width: 100%;
             display: flex;
             flex-flow: row nowrap;
-            top: 5%;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #bottomChoice {
+            height: 40%;
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    #rulesHolder {
+        position: relative;
+        grid-area: rulesView;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        right: 5%;
+        #rules {
+            height: 60%;
+            width: 10%;
+            border: 3px hsl(217, 16%, 45%) solid;
+            color: hsl(229, 25%, 31%);
+            text-align: center;
+            font-size: 2rem;
+            border-radius: 10px;
+        }
+    }
+    #overlay {
+        position: fixed;
+        display: none;
+        z-index: 8;
+        background-color: rgba(0, 0, 0, 0.463);
+        height: 100vh;
+        width: 100vw;
+        pointer-events: all;
+    }
+    #rulesModal {
+        display: none;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        height: 400px;
+        width: 400px;
+        z-index: 9;
+        background-color: aliceblue;
+        border-radius: 12px;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        #closeRulesBtnHolder {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            height: 10%;
+            width: 90%;
+            #RulesTitle {
+                color: hsl(229, 25%, 31%);
+                font-size: 2rem;
+            }
+        }
+        #rulesImage {
+            height: 90%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    #PickedChoiceContainer {
+        align-self: center;
+        justify-self: center;
+        grid-area: choiceView;
+        display: none;
+        grid-template-columns: 40% 20% 40%;
+        grid-template-areas: "myChoice winLoose AiChoice";
+        position: relative;
+        height: 75%;
+        width: 90%;
+        .blankBackground {
+            background-color: aqua;
+        }
+        #MyChoice {
+            grid-area: myChoice;
+            display: flex;
+            flex-flow: column nowrap;
             justify-content: space-between;
             align-items: center;
-            height: 70%;
-            width: 60%;
-            border: 3px hsl(217, 16%, 45%) solid;
-            border-radius: 12px;
-            #titleContainer {
-                margin-left: 5%;
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-                align-items: center;
-                height: 80%;
-                width: 30%;
-                background-image: url(../images/logo.svg);
-                background-position: center;
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-            }
-            #ScoreContainer {
-                border: 2px white solid;
-                border-radius: 12px;
-                background-color: white;
-                margin-right: 5%;
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-                align-items: center;
-                height: 80%;
-                width: 30%;
-                #Scoretilte {
-                    text-align: center;
-                    height: 20%;
-                    width: 100%;
-                    color: hsl(229, 64%, 46%);
-                    font-size: 24px;
-                }
-                #ScoreCounter {
-                    text-align: center;
-                    height: 60%;
-                    width: 100%;
-                    color: hsl(229, 25%, 31%);
-                    font-size: 3rem;
-                }
-            }
-        }
-        #ChoicesContainer {
-            align-self: center;
-            justify-self: center;
-            grid-area: choiceView;
-            display: flex;
-            flex-flow: row nowrap;
-            position: relative;
             height: 100%;
-            width: 70%;
-            #ChoiceBackGround {
-                left: 15%;
-                height: 70%;
-                width: 70%;
-                position: absolute;
-                z-index: 0;
-                align-self: center;
-                justify-self: center;
-                background-image: url(../images/bg-triangle.svg);
-                background-position: center;
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-            }
-            #choicesHolder {
-                position: absolute;
-                z-index: 1;
-                height: 100%;
-                width: 100%;
-                display: flex;
-                flex-flow: column nowrap;
-                align-items: center;
-                justify-content: space-evenly;
+            width: 100%;
+            .choiceTitle {
+                font-size: 1.6rem;
+                color: white;
             }
             .choice {
                 display: flex;
@@ -158,9 +274,24 @@
                 align-items: center;
                 justify-content: center;
                 border-radius: 50%;
-                height: 100%;
-                width: 35%;
+                height: 80%;
+                width: 90%;
                 border: 1px solid grey;
+            }
+            #myPaper {
+                display: none;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+            }
+            #myScissors {
+                display: none;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+            }
+            #myRock {
+                display: none;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
             }
             .choiceBackground {
                 display: flex;
@@ -172,253 +303,542 @@
                 height: 80%;
                 width: 80%;
             }
-            #paper {
-                box-shadow: -5px, 5px grey;
-                background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-            }
-            #scissors {
-                box-shadow: -5px, 5px grey;
-                background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-            }
-            #rock {
-                box-shadow: -5px, 5px grey;
-                background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-            }
-            #TopChoice {
-                height: 40%;
-                width: 100%;
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                justify-content: space-evenly;
-            }
-            #bottomChoice {
-                height: 40%;
-                width: 100%;
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                justify-content: center;
-            }
         }
-        #rulesHolder {
-            position: relative;
-            grid-area: rulesView;
-            width: 100%;
-            height: 100%;
+        #AIChoice {
+            grid-area: AiChoice;
             display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            justify-content: flex-end;
-            right: 5%;
-            #rules {
-                height: 60%;
-                width: 10%;
-                border: 3px hsl(217, 16%, 45%) solid;
-                color: hsl(229, 25%, 31%);
-                text-align: center;
-                font-size: 2rem;
-                border-radius: 10px;
-            }
-        }
-        #overlay {
-            position: fixed;
-            display: none;
-            z-index: 8;
-            background-color: rgba(0, 0, 0, 0.463);
-            height: 100vh;
-            width: 100vw;
-            pointer-events: all;
-        }
-        #rulesModal {
-            display: none;
             flex-flow: column nowrap;
             justify-content: space-between;
             align-items: center;
-            position: absolute;
-            height: 400px;
-            width: 400px;
-            z-index: 9;
-            background-color: aliceblue;
-            border-radius: 12px;
-            left: 50%;
-            top: 50%;
-            translate: -50% -50%;
-            #closeRulesBtnHolder {
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                justify-content: space-between;
-                height: 10%;
-                width: 90%;
-                #RulesTitle {
-                    color: hsl(229, 25%, 31%);
-                    font-size: 2rem;
-                }
+            height: 100%;
+            width: 100%;
+            .choiceTitle {
+                font-size: 1.6rem;
+                color: white;
             }
-            #rulesImage {
-                height: 90%;
+            .choice {
                 display: flex;
-                flex-flow: row nowrap;
+                flex-flow: column nowrap;
                 align-items: center;
                 justify-content: center;
+                border-radius: 50%;
+                height: 80%;
+                width: 90%;
+            }
+            #AiBlank {
+                background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+            }
+            #AiPaper {
+                display: none;
+                border: 1px white solid;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+            }
+            #AiScissors {
+                display: none;
+                border: 1px white solid;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+            }
+            #AiRock {
+                display: none;
+                border: 1px white solid;
+                box-shadow: -5px, 5px grey;
+                background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+            }
+            .choiceBackground {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: aliceblue;
+                height: 80%;
+                width: 80%;
             }
         }
-        #PickedChoiceContainer {
-            align-self: center;
-            justify-self: center;
-            grid-area: choiceView;
+        #winLoseView {
+            grid-area: winLoose;
             display: none;
-            grid-template-columns: 40% 20% 40%;
-            grid-template-areas: "myChoice winLoose AiChoice";
             position: relative;
-            height: 75%;
-            width: 90%;
-            .blankBackground {
-                background-color: aqua;
+            height: 100%;
+            width: 100%;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            #winLoseText {
+                font-size: 3rem;
+                color: aliceblue;
             }
-            #MyChoice {
-                grid-area: myChoice;
+            #PlayAgainButton {
                 display: flex;
-                flex-flow: column nowrap;
-                justify-content: space-between;
-                align-items: center;
-                height: 100%;
-                width: 100%;
-                .choiceTitle {
-                    font-size: 1.6rem;
-                    color: white;
-                }
-                .choice {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    height: 80%;
-                    width: 90%;
-                    border: 1px solid grey;
-                }
-                #myPaper {
-                    display: none;
-                    box-shadow: -5px, 5px grey;
-                    background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-                }
-                #myScissors {
-                    display: none;
-                    box-shadow: -5px, 5px grey;
-                    background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-                }
-                #myRock {
-                    display: none;
-                    box-shadow: -5px, 5px grey;
-                    background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-                }
-                .choiceBackground {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    background-color: aliceblue;
-                    height: 80%;
-                    width: 80%;
-                }
-            }
-            #AIChoice {
-                grid-area: AiChoice;
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: space-between;
-                align-items: center;
-                height: 100%;
-                width: 100%;
-                .choiceTitle {
-                    font-size: 1.6rem;
-                    color: white;
-                }
-                .choice {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    height: 80%;
-                    width: 90%;
-                }
-                #AiBlank {
-                    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-                }
-                #AiPaper {
-                    display: none;
-                    border: 1px white solid;
-                    box-shadow: -5px, 5px grey;
-                    background-image: radial-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-                }
-                #AiScissors {
-                    display: none;
-                    border: 1px white solid;
-                    box-shadow: -5px, 5px grey;
-                    background-image: radial-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-                }
-                #AiRock {
-                    display: none;
-                    border: 1px white solid;
-                    box-shadow: -5px, 5px grey;
-                    background-image: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-                }
-                .choiceBackground {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    background-color: aliceblue;
-                    height: 80%;
-                    width: 80%;
-                }
-            }
-            #winLoseView {
-                grid-area: winLoose;
-                display: none;
-                position: relative;
-                height: 100%;
-                width: 100%;
-                flex-flow: column nowrap;
+                flex-flow: row nowrap;
                 justify-content: center;
                 align-items: center;
-                #winLoseText {
-                    font-size: 3rem;
-                    color: aliceblue;
+                color: hsl(217, 16%, 45%);
+                height: 10%;
+                width: 100%;
+                background-color: aliceblue;
+                border-radius: 12px;
+            }
+        }
+        #rules:hover {
+            cursor: pointer;
+        }
+        .choice:hover {
+            cursor: pointer;
+        }
+        #PlayAgainButton:hover {
+            cursor: pointer;
+        }
+    }
+    #multiplayerBtn {
+        left: 2%;
+        top: 10%;
+        grid-area: menuPVP;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-self: center;
+        text-align: center;
+        justify-content: space-evenly;
+        align-items: center;
+        a {
+            width: 30%;
+            height: 80%;
+            text-decoration: none;
+            position: relative;
+            color: hsl(217, 16%, 45%);
+            font-family: "Barlow Semi Condensed", sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px hsl(217, 16%, 45%) solid;
+            border-radius: 5px;
+        }
+        #pvpMenuBtn {
+            width: 30%;
+            height: 80%;
+            position: relative;
+            color: hsl(217, 16%, 45%);
+            font-family: "Barlow Semi Condensed", sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px hsl(217, 16%, 45%) solid;
+            border-radius: 5px;
+        }
+    }
+    #multiplayerMenu {
+        grid-area: choiceView;
+        z-index: 8;
+        position: relative;
+        display: none;
+        grid-template-rows: 8% 12% 80%;
+        grid-template-columns: 100%;
+        grid-template-areas: "pvpTitle" " statusView" " mainView";
+        height: 100%;
+        width: 60%;
+        left: 50%;
+        translate: -50%;
+        background-color: rgba(62, 58, 58, 0.931);
+        #PVPtitleWrap {
+            height: 100%;
+            width: 100%;
+            grid-area: pvpTitle;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            #pvpTitle {
+                align-self: center;
+                position: relative;
+                text-align: center;
+                height: 50%;
+                width: 40%;
+                color: hsl(39, 89%, 49%);
+                font-family: "Barlow Semi Condensed", sans-serif;
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+            #pvpCloseBtn {
+                position: relative;
+                right: 5%;
+                border-radius: 5px;
+                background-image: url(../images/icon-close.svg);
+                background-position: center;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-color: hsl(8, 93%, 47%);
+                height: 50%;
+                width: 3%;
+            }
+        }
+    }
+    #MainView {
+        align-self: center;
+        justify-self: center;
+        height: 98%;
+        width: 100%;
+        grid-area: mainView;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 75%;
+        grid-template-areas: "CreateGameView" "GamesView";
+    }
+    #CreateGameView {
+        justify-self: center;
+        align-self: center;
+        height: 98%;
+        width: 95%;
+        background-image: radial-gradient(hsl(218, 10%, 78%), hsl(217, 66%, 71%));
+        grid-area: CreateGameView;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 9px;
+        #CreateGameTitle {
+            font-size: 1.1rem;
+            color: hsl(111, 100%, 30%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            height: 20%;
+        }
+        #ScoreLimitView {
+            height: 60%;
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            #ScoreLimitTitle {
+                height: 20%;
+                font-size: 1.2rem;
+                color: hsl(257, 97%, 51%);
+            }
+            #ScoreLimitRadios {
+                margin-right: 4%;
+                align-self: flex-end;
+                height: 70%;
+                width: 70%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-items: center;
+                div {
+                    height: 50%;
+                    width: 45%;
+                    label {
+                        font-family: cursive;
+                        color: hsl(275, 97%, 51%);
+                    }
+                    input {
+                        appearance: none;
+                        border-radius: 50%;
+                        width: 16px;
+                        height: 16px;
+                        border: 2px solid rgb(255, 255, 255);
+                        transition: 0.2s all linear;
+                        margin-right: 5px;
+                        position: relative;
+                        top: 4px;
+                    }
+                    input:checked {
+                        border: 6px solid rgb(99, 92, 92);
+                        outline: unset;
+                    }
                 }
-                #PlayAgainButton {
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: center;
-                    align-items: center;
-                    color: hsl(217, 16%, 45%);
-                    height: 10%;
-                    width: 100%;
-                    background-color: aliceblue;
-                    border-radius: 12px;
-                }
             }
-            #rules:hover {
-                cursor: pointer;
+        }
+        #createGameButton {
+            align-self: flex-end;
+            justify-self: center;
+            margin-right: 1%;
+            position: relative;
+            height: 19%;
+            width: 20%;
+            background-image: linear-gradient(to bottom right, hsl(89, 96%, 49%), hsl(89, 92%, 80%), hsl(89, 96%, 49%));
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+        }
+    }
+    #GamesListView {
+        justify-self: center;
+        align-self: center;
+        grid-area: GamesView;
+        position: relative;
+        display: none;
+        flex-flow: column nowrap;
+        align-items: center;
+        height: 92%;
+        width: 91%;
+        padding: 1%;
+        background-image: linear-gradient( hsl(218, 10%, 78%), hsl(217, 66%, 71%));
+        border-radius: 9px;
+        .RoomItem {
+            background-image: linear-gradient(to right, hsl(217, 66%, 71%), hsl(218, 10%, 78%), hsl(217, 66%, 71%));
+            border: 1px hsl(217, 66%, 71%) solid;
+            border-radius: 5px;
+            width: 98%;
+            height: 10%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            .RoomName {
+                position: relative;
+                left: 1%;
+                font-size: 1.1rem;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align: left;
+                width: 45%;
             }
-            .choice:hover {
-                cursor: pointer;
+            .roomPoints {
+                width: 20%;
+                font-size: 1.1rem;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align: center;
             }
-            #PlayAgainButton:hover {
-                cursor: pointer;
+            .joinButton {
+                border-radius: 5px;
+                position: relative;
+                right: 2%;
+                background-color: rgb(113, 220, 113);
+                align-items: center;
+                width: 25%;
+                color: green;
+                font-size: 1.1rem;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align: center;
+            }
+        }
+    }
+    #GameTitleView {
+        justify-self: center;
+        align-self: center;
+        height: 98%;
+        width: 95%;
+        background-image: radial-gradient(hsl(218, 10%, 78%), hsl(217, 66%, 71%));
+        grid-area: CreateGameView;
+        display: none;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 9px;
+        #GameRoomTitle {
+            font-size: 1.2rem;
+            color: hsl(111, 98%, 51%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+    }
+    #GameRoomView {
+        justify-self: center;
+        align-self: center;
+        grid-area: GamesView;
+        position: relative;
+        display: none;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 92%;
+        width: 91%;
+        padding: 1%;
+        background-image: linear-gradient( hsl(218, 10%, 78%), hsl(217, 66%, 71%));
+        border-radius: 9px;
+        .playerInfo {
+            height: 50%;
+            width: 45%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .readyButton {
+            color: red;
+            height: 50%;
+            width: 45%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+            border-radius: 9px;
+        }
+        .InfoHolder {
+            width: 90%;
+            height: 40%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-evenly;
+            label {
+                font-size: 1.1rem;
+                font-weight: 600;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            div {
+                font-family: cursive;
+            }
+        }
+    }
+    #LoggedInView {
+        align-self: center;
+        justify-self: center;
+        grid-area: statusView;
+        display: none;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        height: 95%;
+        width: 95%;
+        border-radius: 9px;
+        background-image: radial-gradient( hsl(39, 70%, 70%), hsl(39, 53%, 49%));
+        #pvpMenuNameDiv {
+            .pvpName {}
+        }
+        #editNameInputHolder {
+            height: 65%;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: space-between;
+            #editNameInput {
+                background-color: hsl(217, 24%, 70%);
+                border-radius: 5px;
+            }
+            #setNameBtn {
+                text-align: center;
+                border-radius: 5px;
+                width: 60%;
+                background-color: hsl(217, 24%, 70%)
+            }
+        }
+        #LogoutBtn {
+            background-image: radial-gradient(hsl(217, 24%, 70%), hsl(217, 53%, 54%));
+            text-align: center;
+            height: 35%;
+            width: 20%;
+            border-radius: 5px;
+            align-self: flex-end;
+            position: relative;
+            right: 2%;
+            bottom: 5%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    #SignUpView {
+        grid-area: statusView;
+        height: 100%;
+        width: 100%;
+        display: none;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        .AuthBtns {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            background-color: hsl(217, 24%, 70%);
+            border-radius: 5px;
+        }
+        .BtnText {
+            color: hsl(217, 16%, 45%);
+            font-family: "Barlow Semi Condensed", sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        #AuthBtnsHolder {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            #Loginbtn {
+                height: 80%;
+                width: 40%;
+            }
+            #SignUpbtn {
+                height: 80%;
+                width: 40%;
+            }
+        }
+        #AuthInputsHolder {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    //end of Main View
+    #titleScoreContainer {
+        align-self: center;
+        justify-self: center;
+        grid-area: scoreView;
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 60%;
+        width: 80%;
+        border: 3px hsl(217, 16%, 45%) solid;
+        border-radius: 5px;
+        #titleContainer {
+            position: relative;
+            height: 80%;
+            width: 40%;
+            background-image: url(../images/logo.svg);
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        #ScoreContainer {
+            border: 2px white solid;
+            border-radius: 5px;
+            background-color: white;
+            margin-right: 5%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            height: 80%;
+            width: 30%;
+            #Scoretilte {
+                font-weight: 600;
+                font-family: "Barlow Semi Condensed", sans-serif;
+                text-align: center;
+                height: 20%;
+                width: 98%;
+                color: hsl(229, 64%, 46%);
+                font-size: 24px;
+            }
+            #ScoreCounter {
+                font-weight: 600;
+                font-family: "Barlow Semi Condensed", sans-serif;
+                text-align: center;
+                height: 60%;
+                width: 98%;
+                color: hsl(217, 16%, 45%);
+                font-size: 3rem;
             }
         }
     }
     .attribution {
-        position: absolute;
-        bottom: 0%;
-        font-size: 11px;
-        text-align: center;
+        align-self: center;
+        justify-self: center;
+        height: 100%;
+        width: 100%;
+        grid-area: attribution;
     }
     .attribution a {
         color: hsl(228, 45%, 44%);
