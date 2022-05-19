@@ -73,7 +73,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const user = auth.currentUser;
 const UserID = user.uid;
-const myCreatedGameRef = doc(db, "Games", UserID);
+const myCreatedGameRef = () => doc(db, "Games", UserID);
 /////////////////////////////////////////////////////
 //                 Authentication                  //
 ////////////////////////////////////////////////////
@@ -139,8 +139,8 @@ const JoinById = async(id) => {
     if (user == null) {
         return;
     }
-    const Gameref = doc(db, "Games", id);
-    updateDoc(Gameref, {
+    const GameRef = doc(db, "Games", id);
+    updateDoc(GameRef, {
         InProgress: true,
         playerInRoom: 2,
         Challenger: {
@@ -169,7 +169,7 @@ const CreateRooms = (data) => {
     GameListView.innerHTML += html;
 }
 const GameExist = async() => {
-    const docSnap = await getDoc(myCreatedGameRef);
+    const docSnap = await getDoc(myCreatedGameRef());
     if (docSnap.exists()) {
         UpdateActiveGame(docSnap.data());
         return true;
@@ -206,7 +206,7 @@ const CreateGame = async() => {
             score: 0
         }
     }
-    setDoc(myCreatedGameRef, ActiveGame).then(
+    setDoc(myCreatedGameRef(), ActiveGame).then(
         () => {
             ShowGameRoom();
             UpdateHostName(ActiveGame.Host.displayName);
