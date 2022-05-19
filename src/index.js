@@ -72,8 +72,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const user = auth.currentUser;
-const UserID = user.uid;
-const myCreatedGameRef = () => doc(db, "Games", UserID);
+
 /////////////////////////////////////////////////////
 //                 Authentication                  //
 ////////////////////////////////////////////////////
@@ -169,7 +168,7 @@ const CreateRooms = (data) => {
     GameListView.innerHTML += html;
 }
 const GameExist = async() => {
-    const docSnap = await getDoc(myCreatedGameRef());
+    const docSnap = await getDoc(doc(db, "Games", user.uid));
     if (docSnap.exists()) {
         UpdateActiveGame(docSnap.data());
         return true;
@@ -206,7 +205,7 @@ const CreateGame = async() => {
             score: 0
         }
     }
-    setDoc(myCreatedGameRef(), ActiveGame).then(
+    setDoc(doc(db, "Games", user.uid), ActiveGame).then(
         () => {
             ShowGameRoom();
             UpdateHostName(ActiveGame.Host.displayName);
